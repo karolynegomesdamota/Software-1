@@ -7,3 +7,5 @@ print("Version control")
 print("Test new branch")
 
 print("Adding again something new to the test branch")
+
+print("End of the exercise!")
