@@ -8,7 +8,7 @@ I completed exercises 1 and 2.
 
 ## Module 3
 
-I completed exercise 1.
+I completed exercise 1, 2 and 3.
 
 ## Module 4
 

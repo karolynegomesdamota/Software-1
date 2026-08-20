@@ -36,7 +36,14 @@ import math
 radius = input("Enter the radius of the circle: ")
 
 radius = float(radius)
+# We use this to covert the text we receive into number
 
 area = radius ** 2 * math.pi
+# This is simply the formula 
 
 print("The area of the circle is " + str(area))
+# Here we convert the number back to string using str because Moodle itself was giving error and the code was asking for a text.
+
+# on top the result of exercese 2
+
+
