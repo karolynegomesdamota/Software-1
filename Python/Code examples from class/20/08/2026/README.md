@@ -1,0 +1,1 @@
+https://metropolia-sw.github.io/sw1-python/en/03_variables_and_interactive_programs.html
