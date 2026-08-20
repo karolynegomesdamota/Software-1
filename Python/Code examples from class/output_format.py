@@ -10,4 +10,3 @@ print (f"My lunch time today will be {lunch_time:15.4f}")
 # These should look exactly the same, it's just a different way of coding. 
 # The second option is shorter and clearer.
 # For the other options we are saying with the first digits how many spaces we want for integral numbers and the second one decimals
-

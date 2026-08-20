@@ -4,7 +4,7 @@
 
 ## Module 1 & 2
 
-I completed exercises 1 and 2.
+I completed exercise 1, created my GitHub account and tested Version Control.
 
 ## Module 3
 
