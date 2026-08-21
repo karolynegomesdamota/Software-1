@@ -10,6 +10,8 @@ I completed exercise 1, created my GitHub account and tested Version Control.
 
 I completed exercise 1, 2 and 3.
 
+I completed independently exercise 4. According to Moodle, it's correct. Pending to confirm in class if it is.
+
 ## Module 4
 
 ## Module 5
