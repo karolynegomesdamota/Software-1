@@ -11,4 +11,4 @@ elif year_divisible_4 == 0:
 else:
     print(str(year) + " is not a leap year.")
 
-# Note to myself: remainder = dividend % divisor
+# Note to myself: remainder = dividend % divisor (modulo operator)
