@@ -14,6 +14,8 @@ I completed independently exercise 4. According to Moodle, it's correct. Pending
 
 I completed independently exercise 5. The result is matching but according to Moodle, there's a "run error". Pending to confirm in class what happened.
 
+I completed independently exercise 6. According to Moodle, it's correct. Pending to confirm in class if it is.
+
 ## Module 4
 
 ## Module 5
