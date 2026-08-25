@@ -12,7 +12,7 @@ I completed exercise 1, 2, 3, 4, 5 and 6.
 
 ## Module 4
 
-I completed exercise 1 and 2.
+I completed exercise 1, 2 and 3.
 
 ## Module 5
 
