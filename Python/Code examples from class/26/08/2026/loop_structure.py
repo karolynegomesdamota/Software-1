@@ -65,3 +65,11 @@ while command != "stop":
     command = input ("What do you want to do? ")
 
 # Break
+
+# Problems:
+
+# Remember to add "additions" to rounds to close the loop
+
+# Remember to mention the same variable. After the run, if you need to add a new command, refer the first variable.
+
+# Make sure the condition is not infinite. For example lower and equal than 10 or greater than 10.
