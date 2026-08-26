@@ -73,3 +73,28 @@ while command != "stop":
 # Remember to mention the same variable. After the run, if you need to add a new command, refer the first variable.
 
 # Make sure the condition is not infinite. For example lower and equal than 10 or greater than 10.
+
+# MOD05-EX1 DONE IN CLASS
+
+# Two options:
+
+# My initial attempt:
+
+number = 1
+
+while number <=1000:
+    remainder_number_by_3 = (number % 3)
+    if remainder_number_by_3 == 0:
+        print(number)
+    number += 1
+
+# Note to myself: This was not working at first because I had added the remainder_number_by_3 was outside of the while. So it was printing all the numbers.
+
+# Cleaner option:
+
+number = 1
+
+while number <=1000:
+    if number % 3 == 0:
+        print(number)
+    number += 1
