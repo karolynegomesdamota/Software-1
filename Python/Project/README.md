@@ -1,3 +1,3 @@
-# My project does't have a name yet
+# Karo's game project
 
 Karolyne Gomes da Mota
