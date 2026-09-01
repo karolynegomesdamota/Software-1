@@ -3,7 +3,7 @@ cities = []
 city = input ("Enter the name of a city: ")
 cities.append(city)
 
-for ask in range(1,5):
+for ask in range(4):
     city = input ("Enter the name of a city: ")
     cities.append(city)
 
@@ -20,7 +20,7 @@ I had previously created a count and added a while that added counts in order to
 
 Now, however, I added:
 
-for ask in range(1,5): # Loops 5 times and there's no need for a count.
+for ask in range(1,5): # Loops 4 times and there's no need for a count. The fifth question is out of the loop. You can also simply range(4).
     city = input ("Enter the name of a city: ")
     cities.append(city)
 
