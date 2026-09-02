@@ -24,7 +24,7 @@ I completed exercise 1, 2, 3 and 4.
 
 ## Module 7
 
-I completed exercise 1, 2 and 3.
+I completed exercise 1, 2, 3 and 4.
 
 ## Module 8
 
