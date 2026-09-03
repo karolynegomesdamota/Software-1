@@ -30,6 +30,8 @@ I completed exercise 1, 2, 3, 4, 5 and 6.
 
 I completed exercise 1. It works, but the code does not look good.
 
+I completed exercise 2.
+
 ## Module 9
 
 ## Module 10
