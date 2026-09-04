@@ -1,9 +1,6 @@
 cities = []
 
-city = input ("Enter the name of a city: ")
-cities.append(city)
-
-for ask in range(4):
+for ask in range(5):
     city = input ("Enter the name of a city: ")
     cities.append(city)
 
@@ -25,4 +22,6 @@ for ask in range(1,5): # Loops 4 times and there's no need for a count. The fift
     cities.append(city)
 
 Finally, needed to add 2 breaks within the print because Moodle was giving me errors due to spaces.
+
+Extra: Today, talking to George we realized there was no need to put the input outside of the for/in. We simply added the input first within the for/in and change the range to one more.
 """
