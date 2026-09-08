@@ -1,29 +1,31 @@
 def get_season (month):
     if month in range(1, 13):
-        season = seasons_of_the_year[month-1]
+        if month in range (1,3) or month == 12:
+            season = seasons_of_the_year[0]
+        elif month in range (3,6):
+            season = seasons_of_the_year[1]
+        elif month in range (6,9):
+            season = seasons_of_the_year[2]
+        elif month in range (9,12):
+            season = seasons_of_the_year[3]
+
         print(f"You entered: {month}")
         print(f"The season is {season}.")
+
     else:
         print(f"You entered: {month}")
         print("Please enter a number between 1 and 12.")
-        season = "not"
+        season = "unknown"
 
-    return season
-
-seasons_of_the_year = ("winter", "winter", "spring", "spring", "spring", "summer", "summer", "summer", "autumn", "autumn", "autumn", "winter")
+seasons_of_the_year = ("winter","spring","summer", "autumn")
 
 month = int(input("Enter the number of a month (1-12): "))
 
-season = get_season(month)
+get_season(month)
 
 
 """
-Note for myself:
-
-The code works, but seasons_of_the_year is horrendous (every season written one by one).
-I need to figure out how to fix it.
-
-I also wonder how the function works without passing seasons_of_the_year as a parameter. Ask teacher.
+Note for myself from previous code that is worth learning:
 
 # Explanation of seasons_of_the_year[month-1]
 
