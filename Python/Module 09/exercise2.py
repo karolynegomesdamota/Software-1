@@ -6,7 +6,7 @@ class Car:
         self.travelled_distance = 0
 
     def accelerate (self, change_of_speed):
-        self.change_of_speed = change_of_speed
+        self.change_of_speed = change_of_speed              # Just found out this can be removed and it works. Find out why.
         if change_of_speed > 0:
             for _ in range(change_of_speed):
                 if self.current_speed < self.maximum_speed:
