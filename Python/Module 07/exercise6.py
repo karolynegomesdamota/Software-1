@@ -33,7 +33,6 @@ Once we have the area, we use it to divide the price to get what a meter costs.
 # Keep in mind:
 
 I tried to loop the input questions, but it was making the code overly complicated.
-import math
 
 I also had initially issues because the calculation was not going through because the numbers were strings.
 I fixed it by adding int.
