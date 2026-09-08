@@ -32,7 +32,7 @@ I completed exercise 1, 2 and 3.
 
 ## Module 9
 
-I completed exercise 1.
+I completed exercise 1 and 2.
 
 ## Module 10
 
