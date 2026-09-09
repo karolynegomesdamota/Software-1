@@ -1,7 +1,7 @@
-player_name = input ("Enter your name: ")
+player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
 
-print(f"The name of the player is: {player_name}")
+print(f"\nThe name of the player is: {player_name}")
 print(f"The age of the player is: {player_age}")
 
 # Backpack functions
@@ -9,7 +9,7 @@ print(f"The age of the player is: {player_age}")
 items = []
 
 def print_backpack ():
-    print(f"These are all the items in your backpack: {items}")
+    print(f"\nThese are all the items in your backpack: {items}")
 
 def add_backpack ():
     item = input ("Add an item to your backpack: ")
@@ -33,7 +33,7 @@ def choose_action_backpack ():
 energy = 0
 
 def print_energy ():
-    print(f"This is your energy: {energy}")
+    print(f"\nThis is your energy: {energy}")
 
 def choose_action_energy ():
     action = input("Type 'sleep' or 'exit': ")
@@ -41,7 +41,7 @@ def choose_action_energy ():
         sleep()
         print_energy ()
     elif action == "exit":
-        print("Exiting energy tab.")
+        print("\nExiting energy tab.")
 
 def sleep ():
     global energy
@@ -55,10 +55,10 @@ def sleep ():
 # Main program
 
 if player_age < 12:
-    print ("You are a minor!")
+    print ("\nYou are a minor!")
 else:
-    print (f"Welcome, {player_name}!")
-    print ("Main menu: ")
+    print (f"\nWelcome, {player_name}!")
+    print ("\nMain menu: ")
     command = input ("Choose a command: \n1 - backpack \n2 - energy \n3 - lopeta \n")
     while command != "3":
         if command == "1":
@@ -71,5 +71,5 @@ else:
         else:
             print("Command not found.")
 
-        print ("Main menu: ")
+        print ("\nMain menu: ")
         command = input ("Choose a command: \n1 - backpack \n2 - energy \n3 - lopeta \n")
