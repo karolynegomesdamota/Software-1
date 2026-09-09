@@ -40,7 +40,7 @@ Ex:
 car = Car("ABC-123", 142)
 
 7) Now you can print whatever you need referencing the car variable:
-print(f"License plate: {car.license_plate}")
+print(f"License plate: {car.license_plate}")                     # Note: The reference .license_plate refers to the name you gave to the self.
 print(f"Maximum speed: {car.maximum_speed} km/h")
 print(f"Current speed: {car.current_speed} km/h")
 print(f"Travelled distance: {car.travelled_distance} km")
