@@ -36,4 +36,6 @@ I completed exercise 1, 2, 3 and 4.
 
 ## Module 10
 
+I completed exercise 1 (but Moodle does not accept it).
+
 ## Module 11 & 12
