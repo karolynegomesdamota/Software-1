@@ -16,13 +16,10 @@ class Car:
                     self.current_speed = self.current_speed - 1
 
     def drive(self, number_of_hours):
-        self.travelled_distance = number_of_hours * self.current_speed
+        self.travelled_distance = self.travelled_distance + (number_of_hours * self.current_speed)
 
 car = Car("ABC-123", 142)
 print(f"Initial distance: {car.travelled_distance} km")
 car.current_speed = 60
 car.drive(1.5)
 print(f"Distance after driving 1.5 hours at 60 km/h: {car.travelled_distance} km")
-
-
-# This is working but Moodle does not accept the code!!!
