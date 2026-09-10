@@ -5,7 +5,7 @@ class Elevator:
         self.floor = min_floor
 
     def go_to_floor(self, number_floor):
-        self.number_floor = number_floor
+        self.number_floor = number_floor                                                             #Is this the correct way of doing this? I had to add this here, in order for it to work.
         if self.floor < self.number_floor and self.number_floor <= self.max_floor:
             self.floor_up()
         elif self.floor > self.number_floor and self.number_floor >= self.min_floor:
