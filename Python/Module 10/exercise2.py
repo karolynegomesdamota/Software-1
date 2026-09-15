@@ -22,15 +22,15 @@ class Elevator:
         print(f"The current floor is {self.current_floor}")
 
 class Building:
-    def __init__(self, bottom_floor, top_floor, number_elevators):
+    def __init__(self, bottom_floor, top_floor, amount_created_elevators):
         self.list_of_elevators = []
-        for i in range(number_elevators):
+        for i in range(amount_created_elevators):
             i = Elevator(bottom_floor, top_floor)
             self.list_of_elevators.append(i)
 
-    def run_elevator(self, number_of_elevators, destination):
-        print(f"\nI'm currently running the elevator number {number_of_elevators}!")
-        self.list_of_elevators[number_of_elevators-1].go_to_floor(destination)
+    def run_elevator(self, number_of_elevator, destination):
+        print(f"\nI'm currently running the elevator number {number_of_elevator}!")
+        self.list_of_elevators[number_of_elevator-1].go_to_floor(destination)
 
 
 building = Building(1, 10, 3)
@@ -85,15 +85,15 @@ class Elevator:
         print(f"We have reached floor {self.current_floor}!")
 
 class Building:
-    def __init__(self, bottom_floor, top_floor, number_elevators):
-        self.list_of_elevators = [] # This is here (outside) because inside the for/in it was not adding up.
-        for i in range(number_elevators):
+    def __init__(self, bottom_floor, top_floor, number_elevator):
+        self.list_of_elevator = [] # This is here (outside) because inside the for/in it was not adding up.
+        for i in range(number_elevator):
             i = Elevator(bottom_floor, top_floor)
-            self.list_of_elevators.append(i)
+            self.list_of_elevator.append(i)
 
-    def run_elevator(self, number_of_elevators, destination):
-        print(f"\nI'm currently running the elevator number {number_of_elevators}!")
-        self.list_of_elevators[number_of_elevators-1].go_to_floor(destination) #-1 To access the correct elevator of the index.
+    def run_elevator(self, number_of_elevator, destination):
+        print(f"\nI'm currently running the elevator number {number_of_elevator}!")
+        self.list_of_elevator[number_of_elevator-1].go_to_floor(destination) #-1 To access the correct elevator of the index.
 
 building = Building(1, 10, 3)
 
