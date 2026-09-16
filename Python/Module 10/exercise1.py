@@ -15,11 +15,11 @@ class Elevator:
 
     def floor_up(self):
         self.current_floor = self.current_floor + (self.destination - self.current_floor)
-        print(f"The current floor is {self.current_floor}")
+        print(f"We have reached floor {self.current_floor}!")
 
     def floor_down(self):
         self.current_floor = self.current_floor - (self.current_floor - self.destination)
-        print(f"The current floor is {self.current_floor}")
+        print(f"We have reached floor {self.current_floor}!")
 
 h = Elevator(1, 10)
 print("Basic elevator test:")
