@@ -5,25 +5,27 @@ class Elevator:
         self.current_floor = bottom_floor
 
     def go_to_floor(self, destination):
-        self.destination = destination
-        if self.current_floor < self.destination and self.destination <= self.top_floor:
-            self.floor_up()
-        elif self.current_floor > self.destination and self.destination >= self.bottom_floor:
-            self.floor_down()
+        if self.current_floor < destination and destination <= self.top_floor:
+            while self.current_floor != destination:
+                self.floor_up()
+            print(f"We have reached floor {self.current_floor}!")
+        elif self.current_floor > destination and destination >= self.bottom_floor:
+            while self.current_floor != destination:
+                self.floor_down()
+            print(f"We have reached floor {self.current_floor}!")
         else:
             print(f"The floor {destination} does not exist!")
 
     def floor_up(self):
-        self.current_floor = self.current_floor + (self.destination - self.current_floor)
-        print(f"We have reached floor {self.current_floor}!")
+        self.current_floor = self.current_floor + 1
 
     def floor_down(self):
-        self.current_floor = self.current_floor - (self.current_floor - self.destination)
-        print(f"We have reached floor {self.current_floor}!")
+        self.current_floor = self.current_floor - 1
 
 h = Elevator(1, 10)
 print("Basic elevator test:")
 h.go_to_floor(5)
 h.go_to_floor(1)
 
-# Code working correctly, but Moodle does not accept it.
+# Modifications done to make Moodle accept it. Ava confirmed the previous one was ok, but it was not in the format requested by Moodle.
+# Now I make the elevator move one by one when it goes up and down. And within the method go_to_floor, I loop it over and over until we reach the destination.
