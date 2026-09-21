@@ -54,6 +54,18 @@ def sleep ():
 
 # Boat functions:
 
+# Boat lore:
+
+def lore_boat():
+    print(f"\nIf you choose to go this way, you will need a boat to get through the the lake.")
+    print(f"In order for you to build the boat, you will need to get wood. You will need 10 woods to build it.")
+    print(f"You can get wood from the wood, but for each tree to cut, you will need to plant 2 seeds.")
+    print(f"Check your bag to see how many seeds you have. If you do not have enough, you can buy more seed from the kiosk.")
+
+    print(f"Once you have wood enough, come back here to build your boat.")
+
+# Build boat
+
 def build_boat():
     if items["wood"] == 10:
         items["wood"] = 0
@@ -87,30 +99,15 @@ else:
     while choose_character != 1 or 2 or 3:
         if choose_character == 1:
             print(f"\nYou chose {character1.name}!")
-            items = {
-            "seeds":character1.items,
-            "money":character1.money,
-            "energy":character1.energy,
-            "wood":10
-            }
+            items = {"seeds":character1.items, "money":character1.money, "energy":character1.energy, "wood":10, "water":0, "jacket":0}
             break
         elif choose_character == 2:
             print(f"\nYou chose {character2.name}!")
-            items = {
-            "seeds":character2.items,
-            "money":character2.money,
-            "energy":character2.energy,
-            "wood":10
-            }
+            items = {"seeds":character2.items, "money":character2.money, "energy":character2.energy, "wood":5, "water":0, "jacket":0}
             break
         elif choose_character == 3:
             print(f"\nYou chose {character3.name}!")
-            items = {
-            "seeds":character3.items,
-            "money":character3.money,
-            "energy":character3.energy,
-            "wood":10
-            }
+            items = {"seeds":character3.items, "money":character3.money, "energy":character3.energy, "wood":10, "water":0, "jacket":0}
             break
         else:
             print("\nError! Choose one of the options.")
@@ -124,17 +121,14 @@ while command != 4:
     if command == 1:
         way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain\n\n"))
         if way_home == 1:
-            print(f"\nIf you choose to go this way, you will need a boat to get through the the lake.")
-            print(f"In order for you to build the boat, you will need to get wood. You will need 10 woods to build it.")
-            print(f"You can get wood from the wood, but for each tree to cut, you will need to plant 2 seeds.")
-            print(f"Check your bag to see how many seeds you have. If you do not have enough, you can buy more seed from the kiosk.")
-
-            print(f"Once you have wood enough, come back here to build your boat.")
+            lore_boat()
 
             boat = int(input("\nPress 1 to build the boat: \n1 - Build boat\n\n"))
             if boat == 1:
-                build_boat()
-                print(items)
+                if items["wood"] >= 10:
+                    build_boat()
+                else:
+                    print("You don't have enough wood! Go get some in the woods!")
             else:
                 print("Error!")
 
