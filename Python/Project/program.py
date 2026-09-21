@@ -72,6 +72,13 @@ def build_boat():
         items["boat"] = 1
         print (f"\nYou now have " + str(items["wood"]) + " of wood and " + str(items["boat"]) + " boat!")
 
+# Goal functions:
+
+def goal():
+    print("\nYou now have everything needed! Let's go home!")
+    print(3 * "\nLoading...\n")
+    print("Congratulations! You got home!")
+
 # Classes
 
 # Class characters
@@ -127,6 +134,7 @@ while command != 4:
             if boat == 1:
                 if items["wood"] >= 10:
                     build_boat()
+                    goal()
                 else:
                     print("You don't have enough wood! Go get some in the woods!")
             else:
