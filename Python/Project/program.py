@@ -91,19 +91,33 @@ else:
             print("\nError! Choose one of the options.")
             choose_character = int(input(f"\n 1. {character1.name} with {character1.items} in bag, {character1.money} euros and {character1.energy} of energy. \n 2. {character2.name} with {character2.items} in bag, {character2.money} euros and {character2.energy} of energy. \n 3. {character3.name} with {character3.items} in bag, {character3.money} euros and {character3.energy} of energy.\n\n"))
 
+print("\nHere some intro story...")
+
+print ("\nMain menu: ")
+command = int(input("Choose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
+while command != 4:
+    if command == 1:
+        # Open the 3 options to get to the goal and explain what is needed for each one.
+        print("\nThese are the 3 ways to get home:")
+        print("1 - Lake. You need to build boat. To build boat, you need wood.")
+        print("2 - Desert. You need water. To get water, you have to pump it from the well.")
+        print("3 - Freezing mountain. You need a jack. To get a jacket, you need to buy it from the second hand store.")
+    elif command == 2:
+        # Open "panel" to show what is in the characters bag and also its energy.
+        print("\nYour panel info:")
+        print("Print backpack")
+        print("Print energy")
+        print("Print money")
+    elif command == 3:
+        # Open rooms that will help to get what is needed to get the requirements.
+        print("\nRooms:")
+        print("Room 1 - Wood")
+        print("Room 2 - Second hand store")
+        print("Room 3 - Well")
+        print("Room 4 - Trade-in store")
+        print("Room 5 - Bedroom (to sleep)")
+    else:
+        print("Command not found.")
 
     print ("\nMain menu: ")
-    command = input ("Choose a command: \n1 - backpack \n2 - energy \n3 - lopeta \n")
-    while command != "3":
-        if command == "1":
-            print_backpack ()
-            choose_action_backpack ()
-            print_backpack ()
-        elif command == "2":
-            print_energy ()
-            choose_action_energy ()
-        else:
-            print("Command not found.")
-
-        print ("\nMain menu: ")
-        command = input ("Choose a command: \n1 - backpack \n2 - energy \n3 - lopeta \n")
+    command = int(input("Choose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
