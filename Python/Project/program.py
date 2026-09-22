@@ -146,6 +146,22 @@ def cut_wood():
     else:
         print("Error!")
 
+# Room 2 - Second hand
+
+def second_hand():
+    print("Right now the only item left we have is a jacket!")
+    money_needed_jacket = 10
+    print(f"\nYou will need {money_needed_jacket} money to get this jacket!")
+    ask_buy_jacket = int(input("\nWould you like to buy it? \n1 - Yes. \n1 - No.\n\n"))
+    if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
+        items["money"] = items["money"] - money_needed_jacket
+        items["jacket"] = 1
+        print("You now have " + str(items["money"]) + " money and " + str(items["jacket"]) + " jacket.")
+    elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
+        print("You don't have enough money! Go trade-in something in the trade-in store!")
+    else:
+        print("Error!")
+
 # Room 3 - Well
 
 def get_water():
@@ -234,7 +250,7 @@ while command != 4:
             cut_wood()
             break
         elif room == 2:
-            print("Room 2 - Second hand store")
+            second_hand()
             break
         elif room == 3:
             get_water()
