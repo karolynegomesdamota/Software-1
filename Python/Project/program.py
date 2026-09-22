@@ -10,34 +10,9 @@ def print_panel ():
     print(f"\nThis is the panel: ")
     print("Seeds: " + str(items["seeds"]))
     print("Money: " + str(items["money"]))
-    print("Energy: " + str(items["energy"]))
     print("Wood: " + str(items["wood"]))
     print("Water: " + str(items["water"]))
     print("Jacket: " + str(items["jacket"]))
-
-# Energy functions
-
-energy = 0
-
-def print_energy ():
-    print(f"\nThis is your energy: {energy}")
-
-def choose_action_energy ():
-    action = input("Type 'sleep' or 'exit': ")
-    if action == "sleep":
-        sleep()
-        print_energy ()
-    elif action == "exit":
-        print("\nExiting energy tab.")
-
-def sleep ():
-    global energy
-    if energy < 100:
-        while energy < 100:
-            energy = energy + 20
-            print(f"Increasing +20 energy: {energy}")
-    else:
-        print("You have enough energy.")
 
 # Lake functions:
 
@@ -185,15 +160,14 @@ def get_water():
 # Class characters
 
 class Character:
-    def __init__(self, name, items, money, energy):
+    def __init__(self, name, items, money):
         self.name = name
         self.items = items
         self.money = money
-        self.energy = energy
 
-character1 = Character("Cris", 10, 10, 10)
-character2 = Character("Toti", 5, 5, 5)
-character3 = Character("Bal", 2, 2, 2)
+character1 = Character("Cris", 10, 10)
+character2 = Character("Toti", 5, 5)
+character3 = Character("Bal", 2, 2)
 
 
 
@@ -205,23 +179,24 @@ else:
     print (f"\nWelcome, {player_name}!")
     print (f"\nChoose your character:")
     print (f"\nPlease note this cannot be changed later on!")
-    choose_character = int(input(f"\n 1. {character1.name} with {character1.items} in bag, {character1.money} euros and {character1.energy} of energy. \n 2. {character2.name} with {character2.items} in bag, {character2.money} euros and {character2.energy} of energy. \n 3. {character3.name} with {character3.items} in bag, {character3.money} euros and {character3.energy} of energy.\n\n"))
+    choose_character = int(input(f"\n 1. {character1.name} with {character1.items} in bag, {character1.money} euros. \n 2. {character2.name} with {character2.items} in bag, {character2.money} euros. \n 3. {character3.name} with {character3.items} in bag, {character3.money} euros.\n\n"))
     while choose_character != 1 or 2 or 3:
         if choose_character == 1:
             print(f"\nYou chose {character1.name}!")
-            items = {"seeds":character1.items, "money":character1.money, "energy":character1.energy, "wood":10, "water":10, "jacket":1}
+            items = {"seeds":character1.items, "money":character1.money, "wood":10, "water":10, "jacket":1}
             break
         elif choose_character == 2:
             print(f"\nYou chose {character2.name}!")
-            items = {"seeds":character2.items, "money":character2.money, "energy":character2.energy, "wood":5, "water":0, "jacket":0}
+            items = {"seeds":character2.items, "money":character2.money, "wood":5, "water":0, "jacket":0}
             break
         elif choose_character == 3:
             print(f"\nYou chose {character3.name}!")
-            items = {"seeds":character3.items, "money":character3.money, "energy":character3.energy, "wood":10, "water":0, "jacket":0}
+            items = {"seeds":character3.items, "money":character3.money, "wood":10, "water":0, "jacket":0}
             break
         else:
             print("\nError! Choose one of the options.")
-            choose_character = int(input(f"\n 1. {character1.name} with {character1.items} in bag, {character1.money} euros and {character1.energy} of energy. \n 2. {character2.name} with {character2.items} in bag, {character2.money} euros and {character2.energy} of energy. \n 3. {character3.name} with {character3.items} in bag, {character3.money} euros and {character3.energy} of energy.\n\n"))
+            choose_character = int(input(f"\n 1. {character1.name} with {character1.items} in bag, {character1.money} euros. \n 2. {character2.name} with {character2.items} in bag, {character2.money} euros. \n 3. {character3.name} with {character3.items} in bag, {character3.money} euros.\n\n"))
+
 
 print("\nHere some intro story...")
 
