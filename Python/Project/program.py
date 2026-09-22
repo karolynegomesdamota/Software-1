@@ -146,6 +146,23 @@ def cut_wood():
     else:
         print("Error!")
 
+# Room 3 - Well
+
+def get_water():
+    how_much_water = int(input("\nHow much water do you need? "))
+    money_needed = how_much_water * 1
+    print(f"\nYou will need {money_needed} euros to get that much water!")
+    pump_water = int(input("\nPress 1 to start pumping water: \n1 - Start pumping.\n\n"))
+    if pump_water == 1 and items["money"] >= money_needed:
+        items["money"] = items["money"] - money_needed
+        items["water"] = how_much_water
+        print("You now have " + str(items["water"]) + " water and " + str(items["money"]) + " money.")
+    elif pump_water == 1 and items["money"] < money_needed:
+        print("You don't have enough money! Go trade-in something in the trade-in store!")
+    else:
+        print("Error!")
+
+
 
 # Classes
 
@@ -220,7 +237,7 @@ while command != 4:
             print("Room 2 - Second hand store")
             break
         elif room == 3:
-            print("Room 3 - Well")
+            get_water()
             break
         elif room == 4:
             print("Room 4 - Trade-in store")
