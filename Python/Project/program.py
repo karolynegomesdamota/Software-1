@@ -132,7 +132,7 @@ def goal():
 
 # Room 1 - Wood
 
-def cut_wood(items):
+def cut_wood():
     how_many_trees = int(input("\nHow many trees do you need? "))
     seeds_needed = how_many_trees * 2
     print(f"\nYou will need {seeds_needed} seeds to get that many trees!")
@@ -214,7 +214,7 @@ while command != 4:
     elif command == 3:
         room = int(input("\nChoose where you want to go: \n1 - Wood \n2 - Second hand store \n3 - Well \n4 - Trade-in store \n5 - Bedroom\n\n"))
         if room == 1:
-            cut_wood(items)
+            cut_wood()
             break
         elif room == 2:
             print("Room 2 - Second hand store")
