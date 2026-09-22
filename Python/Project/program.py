@@ -52,7 +52,7 @@ def sleep ():
     else:
         print("You have enough energy.")
 
-# Boat functions:
+# Lake functions:
 
 # Boat lore:
 
@@ -63,6 +63,20 @@ def lore_boat():
     print(f"Check your bag to see how many seeds you have. If you do not have enough, you can buy more seed from the kiosk.")
 
     print(f"Once you have wood enough, come back here to build your boat.")
+
+# Check wood
+
+def check_wood():
+
+    boat = int(input("\nPress 1 to build the boat: \n1 - Build boat\n\n"))
+    if boat == 1:
+        if items["wood"] >= 10:
+            build_boat()
+            goal()
+        else:
+            print("You don't have enough wood! Go get some in the woods!")
+    else:
+        print("Error!")
 
 # Build boat
 
@@ -129,17 +143,7 @@ while command != 4:
         way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain\n\n"))
         if way_home == 1:
             lore_boat()
-
-            boat = int(input("\nPress 1 to build the boat: \n1 - Build boat\n\n"))
-            if boat == 1:
-                if items["wood"] >= 10:
-                    build_boat()
-                    goal()
-                else:
-                    print("You don't have enough wood! Go get some in the woods!")
-            else:
-                print("Error!")
-
+            check_wood()
             break
         elif way_home == 2:
             print(f"\nYou chose {character2.name}!")
