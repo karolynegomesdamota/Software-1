@@ -6,8 +6,6 @@ print(f"The age of the player is: {player_age}")
 
 # Panel functions
 
-panel = {}
-
 def print_panel ():
     print(f"\nThis is the panel: ")
     print("Seeds: " + str(items["seeds"]))
@@ -130,6 +128,25 @@ def goal():
     print("Congratulations! You got home!")
 
 
+# Room functions
+
+# Room 1 - Wood
+
+def cut_wood(items):
+    how_many_trees = int(input("\nHow many trees do you need? "))
+    seeds_needed = how_many_trees * 2
+    print(f"\nYou will need {seeds_needed} seeds to get that many trees!")
+    cut_tree = int(input("\nPress 1 to start cutting trees: \n1 - Start cutting.\n\n"))
+    if cut_tree == 1 and items["seeds"] >= seeds_needed:
+        items["seeds"] = items["seeds"] - seeds_needed
+        items["tree"] = how_many_trees
+        print("You now have " + str(items["seeds"]) + " seeds and " + str(items["tree"]) + " trees.")
+    elif cut_tree == 1 and items["seeds"] < seeds_needed:
+        print("You don't have enough seeds! Go get more in the kiosk!")
+    else:
+        print("Error!")
+
+
 # Classes
 
 # Class characters
@@ -144,6 +161,8 @@ class Character:
 character1 = Character("Cris", 10, 10, 10)
 character2 = Character("Toti", 5, 5, 5)
 character3 = Character("Bal", 2, 2, 2)
+
+
 
 # Main program
 
@@ -193,15 +212,24 @@ while command != 4:
     elif command == 2:
         print_panel ()
     elif command == 3:
-        # Open rooms that will help to get what is needed to get the requirements.
-        print("\nRooms:")
-        print("Room 1 - Wood")
-        print("Room 2 - Second hand store")
-        print("Room 3 - Well")
-        print("Room 4 - Trade-in store")
-        print("Room 5 - Bedroom (to sleep)")
-    else:
-        print("Command not found.")
+        room = int(input("\nChoose where you want to go: \n1 - Wood \n2 - Second hand store \n3 - Well \n4 - Trade-in store \n5 - Bedroom\n\n"))
+        if room == 1:
+            cut_wood(items)
+            break
+        elif room == 2:
+            print("Room 2 - Second hand store")
+            break
+        elif room == 3:
+            print("Room 3 - Well")
+            break
+        elif room == 4:
+            print("Room 4 - Trade-in store")
+            break
+        elif room == 5:
+            print("Room 5 - Bedroom (to sleep)")
+            break
+        else:
+            print("Command not found.")
 
     print ("\nMain menu: ")
     command = int(input("Choose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
