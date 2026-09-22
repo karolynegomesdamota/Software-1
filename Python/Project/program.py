@@ -4,29 +4,18 @@ player_age = int(input ("Enter your age: "))
 print(f"\nThe name of the player is: {player_name}")
 print(f"The age of the player is: {player_age}")
 
-# Backpack functions
+# Panel functions
 
-items = []
+panel = {}
 
-def print_backpack ():
-    print(f"\nThese are all the items in your backpack: {items}")
-
-def add_backpack ():
-    item = input ("Add an item to your backpack: ")
-    items.append(item)
-
-def remove_backpack ():
-    item = input ("Remove an item from your backpack: ")
-    items.remove(item)
-
-def choose_action_backpack ():
-    action = input("Type 'add' or 'remove': ")
-    if action == "add":
-        add_backpack ()
-    elif action == "remove":
-        remove_backpack ()
-    else:
-        print("Error! Start over.")
+def print_panel ():
+    print(f"\nThis is the panel: ")
+    print("Seeds: " + str(items["seeds"]))
+    print("Money: " + str(items["money"]))
+    print("Energy: " + str(items["energy"]))
+    print("Wood: " + str(items["wood"]))
+    print("Water: " + str(items["water"]))
+    print("Jacket: " + str(items["jacket"]))
 
 # Energy functions
 
@@ -202,11 +191,7 @@ while command != 4:
             check_jacket()
             break
     elif command == 2:
-        # Open "panel" to show what is in the characters bag and also its energy.
-        print("\nYour panel info:")
-        print("Print backpack")
-        print("Print energy")
-        print("Print money")
+        print_panel ()
     elif command == 3:
         # Open rooms that will help to get what is needed to get the requirements.
         print("\nRooms:")
