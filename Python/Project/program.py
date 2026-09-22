@@ -99,14 +99,6 @@ def check_water():
     else:
         print("Error!")
 
-
-# Goal functions:
-
-def goal():
-    print("\nYou now have everything needed! Let's go home!")
-    print(3 * "\nLoading...\n")
-    print("Congratulations! You got home!")
-
 # Freezing mountain functions:
 
 # Freezing mountain lore:
@@ -129,6 +121,14 @@ def check_jacket():
             print("You don't have a jacket! Go buy one!")
     else:
         print("Error!")
+
+# Goal functions:
+
+def goal():
+    print("\nYou now have everything needed! Let's go home!")
+    print(3 * "\nLoading...\n")
+    print("Congratulations! You got home!")
+
 
 # Classes
 
