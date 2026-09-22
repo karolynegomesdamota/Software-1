@@ -153,7 +153,22 @@ def get_water():
     else:
         print("Error!")
 
+# Room 4 - Trade-in
 
+def trade_in_():
+    print_panel ()
+    print("\nPlease note all your items will be transferred to the new item!")
+    what_trade_in = int(input("\nChoose what you want to trade-in: \n1 - Money into seeds \n2 - Seeds into money \n"))
+    if what_trade_in == 1:
+        items["seeds"] = 0
+        items["money"] = 10
+
+    elif what_trade_in == 2:
+        items["seeds"] = 0
+        items["money"] = 10
+    else:
+        print("Error!")
+    print_panel ()
 
 # Classes
 
@@ -165,9 +180,9 @@ class Character:
         self.items = items
         self.money = money
 
-character1 = Character("Cris", 10, 10)
-character2 = Character("Toti", 5, 5)
-character3 = Character("Bal", 2, 2)
+character1 = Character("Cris", 10, 0)
+character2 = Character("Toti", 0, 10)
+character3 = Character("Bal", 5, 5)
 
 
 
@@ -220,7 +235,7 @@ while command != 4:
     elif command == 2:
         print_panel ()
     elif command == 3:
-        room = int(input("\nChoose where you want to go: \n1 - Wood \n2 - Second hand store \n3 - Well \n4 - Trade-in store \n5 - Bedroom\n\n"))
+        room = int(input("\nChoose where you want to go: \n1 - Wood \n2 - Second hand store \n3 - Well \n4 - Trade-in store\n"))
         if room == 1:
             cut_wood()
             break
@@ -231,10 +246,7 @@ while command != 4:
             get_water()
             break
         elif room == 4:
-            print("Room 4 - Trade-in store")
-            break
-        elif room == 5:
-            print("Room 5 - Bedroom (to sleep)")
+            trade_in_()
             break
         else:
             print("Command not found.")
