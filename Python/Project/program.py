@@ -30,13 +30,17 @@ def lore_boat():
 
 def check_wood():
 
-    boat = int(input("\nPress 1 to build the boat: \n1 - Build boat.\n\n"))
+    boat = int(input("\nPress 1 to build the boat: \n1 - Build boat.\n2 - Go back.\n\n"))
     if boat == 1:
         if items["wood"] >= 10:
             build_boat()
             goal()
         else:
             print("\nYou don't have enough wood! Go get some in the woods!")
+    elif boat == 2:
+        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
+        return way_home # This to pass the new option inside the already first chosen option.
+
     else:
         print("Error!")
 
@@ -63,12 +67,15 @@ def lore_desert():
 
 def check_water():
 
-    start_desert = int(input("\nPress 1 to start your journey: \n1 - Go through the desert.\n\n"))
+    start_desert = int(input("\nPress 1 to start your journey: \n1 - Go through the desert.\n2 - Go back\n\n"))
     if start_desert == 1:
         if items["water"] >= 10:
             goal()
         else:
             print("\nYou don't have enough water! Go pump some from the well!")
+    elif start_desert == 2:
+        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
+        return way_home # This to pass the new option inside the already first chosen option.
     else:
         print("Error!")
 
@@ -87,12 +94,15 @@ def lore_freezing_mountain():
 
 def check_jacket():
 
-    start_mountain = int(input("\nPress 1 to start your journey: \n1 - Go through the mountain.\n\n"))
+    start_mountain = int(input("\nPress 1 to start your journey: \n1 - Go through the mountain. \n2 - Go backKa\n\n"))
     if start_mountain == 1:
         if items["jacket"] >= 1:
             goal()
         else:
             print("\nYou don't have a jacket! Go buy one!")
+    elif start_mountain == 2:
+        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
+        return way_home # This to pass the new option inside the already first chosen option.
     else:
         print("Error!")
 
@@ -188,6 +198,12 @@ def main_menu():
     command = int(input("\nChoose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
     return command
 
+# Way home function menu
+
+def way_home_menu():
+    way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain \n4 - Go back\n\n"))
+    return way_home
+
 # Classes
 
 # Class characters
@@ -235,20 +251,17 @@ command = main_menu()
 
 while command != 4:
     if command == 1:
-        way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain \n4 - Go back\n\n"))
+        way_home = way_home_menu()
         while way_home != 4:
             if way_home == 1:
                 lore_boat()
-                check_wood()
-                break
+                way_home = check_wood() # This to update the way home after it is asked in the check wood function.
             elif way_home == 2:
                 lore_desert()
-                check_water()
-                break
+                way_home = check_water() # This to update the way home after it is asked in the check wood function.
             elif way_home == 3:
                 lore_freezing_mountain()
-                check_jacket()
-                break
+                way_home = check_jacket() # This to update the way home after it is asked in the check wood function.
             elif way_home == 4:
                 main_menu()
             else:
