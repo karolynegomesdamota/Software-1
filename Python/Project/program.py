@@ -42,7 +42,7 @@ def check_wood():
         return way_home # This to pass the new option inside the already first chosen option.
 
     else:
-        print("Error!")
+        print_command_not_found()
 
 # Build boat
 
@@ -77,7 +77,7 @@ def check_water():
         way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
         return way_home # This to pass the new option inside the already first chosen option.
     else:
-        print("Error!")
+        print_command_not_found()
 
 # Freezing mountain functions:
 
@@ -104,7 +104,7 @@ def check_jacket():
         way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
         return way_home # This to pass the new option inside the already first chosen option.
     else:
-        print("Error!")
+        print_command_not_found()
 
 # Goal functions:
 
@@ -133,7 +133,7 @@ def cut_wood():
         room = room_menu()
         return room
     else:
-        print("\nError! Try again!")
+        print_command_not_found()
 
 # Room 2 - Second hand
 
@@ -153,7 +153,7 @@ def second_hand():
         room = room_menu()
         return room
     else:
-        print("\nError! Try again!")
+        print_command_not_found()
 
 # Room 3 - Well
 
@@ -161,7 +161,7 @@ def get_water():
     how_much_water = int(input("\nHow many litres of water do you need? "))
     money_needed = how_much_water * 1
     print(f"\nYou will need {money_needed} coins to get that much water!")
-    pump_water = int(input("\nPress 1 to start pumping water: \n1 - Start pumping\n1 - Go back\n\n"))
+    pump_water = int(input("\nPress 1 to start pumping water: \n1 - Start pumping\n2 - Go back\n\n"))
     if pump_water == 1 and items["money"] >= money_needed:
         items["money"] = items["money"] - money_needed
         items["water"] = how_much_water
@@ -172,7 +172,7 @@ def get_water():
         room = room_menu()
         return room
     else:
-        print("\nError! Try again!")
+        print_command_not_found()
 
 # Room 4 - Trade-in
 
@@ -200,7 +200,7 @@ def trade_in_():
         return room
 
     else:
-        print("\nError! Try again!")
+        print_command_not_found()
     print_panel ()
 
 # Main menu function
@@ -222,6 +222,10 @@ def room_menu():
     room = int(input("\nChoose where you want to go: \n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store \n5 - Go back\n\n"))
     return room
 
+# Print command not found
+
+def print_command_not_found():
+    print("\nCommand not found. Try again!")
 
 # Classes
 
@@ -260,7 +264,7 @@ else:
             items = {"seeds":character3.seeds, "money":character3.money, "wood":0, "water":0, "jacket":0}
             break
         else:
-            print("\nError! Choose one of the options.")
+            print_command_not_found()
             choose_character = int(input(f"\n 1 - {character1.name} with {character1.seeds} seeds and {character1.money} coins. \n 2 - {character2.name} with {character2.seeds} seeds and {character2.money} coins. \n 3 - {character3.name} with {character3.seeds} seeds and {character3.money} coins.\n\n"))
 
 
@@ -284,7 +288,7 @@ while command != 4:
             elif way_home == 4:
                 main_menu()
             else:
-                print("\nCommand not found.")
+                print_command_not_found()
                 way_home = way_home_menu()
     elif command == 2:
         print_panel ()
@@ -302,10 +306,9 @@ while command != 4:
             elif room == 4:
                 room = trade_in_() # TODO: Rename function and variable within it to make more sense and to be more clear.
             else:
-                print("\nCommand not found.")
+                print_command_not_found()
                 room = room_menu()
     else:
-            print("\nCommand not found. Try again! ")
+            print_command_not_found()
 
-    print ("\nMain menu: ")
-    command = int(input("\nChoose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
+    command = main_menu()
