@@ -257,24 +257,29 @@ while command != 4:
 
     elif command == 2:
         print_panel ()
+        print("\nGoing back to the main menu...")
+
     elif command == 3:
-        room = int(input("\nChoose where you want to go: \n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store\n\n"))
-        if room == 1:
-            cut_wood() # TODO: Rename function and variable within it to make more sense and to be more clear.
-            break
-        elif room == 2:
-            second_hand() # TODO: Rename function and variable within it to make more sense and to be more clear.
-            break
-        elif room == 3:
-            get_water() # TODO: Rename function and variable within it to make more sense and to be more clear.
-            break
-        elif room == 4:
-            trade_in_() # TODO: Rename function and variable within it to make more sense and to be more clear.
-            break
-        else:
-            print("\nCommand not found.")
+        room = int(input("\nChoose where you want to go: \n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store \n5 - Go back\n\n"))
+        while room != 5:
+            if room == 1:
+                cut_wood() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                break
+            elif room == 2:
+                second_hand() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                break
+            elif room == 3:
+                get_water() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                break
+            elif room == 4:
+                trade_in_() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                break
+            else:
+                print("\nCommand not found.")
+                room = int(input("\nChoose where you want to go: \n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store \n5 - Go back\n\n"))
+
     else:
-            print("\nCommand not found. Try again: ")
+            print("\nCommand not found. Try again! ")
 
     print ("\nMain menu: ")
     command = int(input("\nChoose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
