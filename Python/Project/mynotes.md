@@ -15,3 +15,14 @@ I asked the teacher and he explained I should add 'global variable' to the funct
 Now I came with another question: If the increasing sum was working before I added global energy, why do I need it to print the final energy? What is the reasoning behind it?
 
 Also, I noticed that I do not have to add the return to make it work.
+
+
+
+
+
+Project - Remember to add to the story:
+Water must be paid to keep the well in good condition with no contaminated water.
+Sustainable town that only second hand.
+
+
+Also: For the parameters and return, I need to think but one idea is to return true or false for some action to then be able to go home.
