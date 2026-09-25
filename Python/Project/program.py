@@ -132,8 +132,7 @@ def cut_wood():
     elif cut_tree == 2:
         room = room_menu()
         return room
-    else:
-        print_command_not_found()
+    #else not needed due to main program already showing error
 
 # Room 2 - Second hand
 
@@ -141,7 +140,7 @@ def second_hand():
     money_needed_jacket = 10
     print("\nSeller: Right now the only item left we have is a jacket!")
     print(f"\nSeller: You will need {money_needed_jacket} coins to get this jacket!")
-    ask_buy_jacket = int(input("\nSeller: Would you like to buy it? \n1 - Yes. \n2 - No.\n\n"))
+    ask_buy_jacket = int(input("\nSeller: Would you like to buy it? \n\n1 - Yes. \n2 - No.\n\n"))
     if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
         items["money"] = items["money"] - money_needed_jacket
         items["jacket"] = 1
@@ -149,11 +148,10 @@ def second_hand():
     elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
         print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
     elif ask_buy_jacket == 2:
-        print("\nSeller: Go away then!\nYou have been kicked out of the store!")
+        print("\nSeller: Go away then!\n\nYou have been kicked out of the store!")
         room = room_menu()
         return room
-    else:
-        print_command_not_found()
+    #else not needed due to main program already showing error
 
 # Room 3 - Well
 
@@ -171,8 +169,7 @@ def get_water():
     elif pump_water == 2:
         room = room_menu()
         return room
-    else:
-        print_command_not_found()
+    #else not needed due to main program already showing error
 
 # Room 4 - Trade-in
 
@@ -198,10 +195,7 @@ def trade_in_():
     elif what_trade_in == 3:
         room = room_menu()
         return room
-
-    else:
-        print_command_not_found()
-    print_panel ()
+    #else not needed due to main program already showing error
 
 # Main menu function
 
