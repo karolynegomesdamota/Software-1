@@ -181,6 +181,13 @@ def trade_in_():
         print("\nError! Try again!")
     print_panel ()
 
+# Main menu function
+
+def main_menu():
+    print ("\nMain menu: ")
+    command = int(input("\nChoose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
+    return command
+
 # Classes
 
 # Class characters
@@ -224,23 +231,30 @@ else:
 
 print("\nHere some intro story...")
 
-print ("\nMain menu: ")
-command = int(input("\nChoose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
+command = main_menu()
+
 while command != 4:
     if command == 1:
-        way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain\n\n"))
-        if way_home == 1:
-            lore_boat()
-            check_wood()
-            break
-        elif way_home == 2:
-            lore_desert()
-            check_water()
-            break
-        elif way_home == 3:
-            lore_freezing_mountain()
-            check_jacket()
-            break
+        way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain \n4 - Go back\n\n"))
+        while way_home != 4:
+            if way_home == 1:
+                lore_boat()
+                check_wood()
+                break
+            elif way_home == 2:
+                lore_desert()
+                check_water()
+                break
+            elif way_home == 3:
+                lore_freezing_mountain()
+                check_jacket()
+                break
+            elif way_home == 4:
+                main_menu()
+            else:
+                print("\nCommand not found.")
+                way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain \n4 - Go back\n\n"))
+
     elif command == 2:
         print_panel ()
     elif command == 3:
