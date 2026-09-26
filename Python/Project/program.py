@@ -10,7 +10,7 @@ def print_panel ():
     print(f"\nThis is everything you have: ")
     print("Seeds: " + str(items["seeds"]))
     print("Money: " + str(items["money"]))
-    print("Wood: " + str(items["wood"]))
+    print("Trees: " + str(items["trees"]))
     print("Water: " + str(items["water"]))
     print("Jacket: " + str(items["jacket"]))
 
@@ -21,10 +21,10 @@ def print_panel ():
 def lore_boat():
     print(f"\nIf you choose to go this way, you will need a boat to get through the lake.")
     print(f"In order for you to build the boat, you will need to get wood. You will need 5 trees to build it.")
-    print(f"You can get trees from the wood. For each tree to cut, you will need to plant 2 seeds.")
+    print(f"You can get trees from The Wood. For each tree to cut, you will need to plant 2 seeds.")
     print(f"Check your bag to see how many seeds you have. If you do not have enough, you can trade-in some for some money in the trade-in store.")
 
-    print(f"Once you have enough wood, come back here to build your boat.")
+    print(f"Once you have enough trees, come back here to build your boat.")
 
 # Check wood
 
@@ -32,11 +32,11 @@ def check_wood():
 
     boat = int(input("\nPress 1 to build the boat: \n1 - Build boat.\n2 - Go back.\n\n"))
     if boat == 1:
-        if items["wood"] >= 10:
+        if items["trees"] >= 5:
             build_boat()
             goal()
         else:
-            print("\nYou don't have enough wood! Go get some in the woods!")
+            print("\nYou don't have enough trees! Go get some in The Wood!")
     elif boat == 2:
         way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
         return way_home # This to pass the new option inside the already first chosen option.
@@ -47,10 +47,10 @@ def check_wood():
 # Build boat
 
 def build_boat():
-    if items["wood"] == 10:
-        items["wood"] = 0
+    if items["trees"] == 5:
+        items["trees"] = 0
         items["boat"] = 1
-        print (f"\nYou now have " + str(items["wood"]) + " of wood and " + str(items["boat"]) + " boat!")
+        print (f"\nYou now have " + str(items["trees"]) + " trees and " + str(items["boat"]) + " boat!")
 
 # Desert functions:
 
@@ -125,8 +125,8 @@ def cut_wood():
     cut_tree = int(input("\nPress 1 to start cutting trees: \n1 - Start cutting \n2 - Go back\n\n"))
     if cut_tree == 1 and items["seeds"] >= seeds_needed:
         items["seeds"] = items["seeds"] - seeds_needed
-        items["tree"] = how_many_trees
-        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["tree"]) + " trees.")
+        items["trees"] = how_many_trees
+        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["trees"]) + " trees.")
     elif cut_tree == 1 and items["seeds"] < seeds_needed:
         print("\nYou don't have enough seeds! Go trade money to get more!")
     elif cut_tree == 2:
@@ -247,15 +247,15 @@ else:
     while choose_character != 1 or 2 or 3:
         if choose_character == 1:
             print(f"\nYou chose {character1.name}!")
-            items = {"seeds":character1.seeds, "money":character1.money, "wood":0, "water":0, "jacket":0}
+            items = {"seeds":character1.seeds, "money":character1.money, "trees":0, "water":0, "jacket":0}
             break
         elif choose_character == 2:
             print(f"\nYou chose {character2.name}!")
-            items = {"seeds":character2.seeds, "money":character2.money, "wood":0, "water":0, "jacket":0}
+            items = {"seeds":character2.seeds, "money":character2.money, "trees":0, "water":0, "jacket":0}
             break
         elif choose_character == 3:
             print(f"\nYou chose {character3.name}!")
-            items = {"seeds":character3.seeds, "money":character3.money, "wood":0, "water":0, "jacket":0}
+            items = {"seeds":character3.seeds, "money":character3.money, "trees":0, "water":0, "jacket":0}
             break
         else:
             print_command_not_found()
