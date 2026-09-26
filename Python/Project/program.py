@@ -1,3 +1,5 @@
+from Menus import main_menu, room_menu, way_home_menu
+
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
 
@@ -196,25 +198,6 @@ def trade_in_():
         room = room_menu()
         return room
     #else not needed due to main program already showing error
-
-# Main menu function
-
-def main_menu():
-    print ("\nMain menu: ")
-    command = int(input("\nChoose a command: \n1 - Ways to get to the goal \n2 - Panel info \n3 - Rooms \n4 - Lopeta\n\n"))
-    return command
-
-# Way home function menu
-
-def way_home_menu():
-    way_home = int(input("\nChoose a command: \n1 - Lake \n2 - Desert \n3 - Freezing mountain \n4 - Go back\n\n"))
-    return way_home
-
- # Rooms function menu
-
-def room_menu():
-    room = int(input("\nChoose where you want to go: \n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store \n5 - Go back\n\n"))
-    return room
 
 # Print command not found
 
