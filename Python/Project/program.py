@@ -1,4 +1,5 @@
 from Menus import main_menu, room_menu, way_home_menu
+from Rooms import second_hand, cut_wood, trade_in_, get_water
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
@@ -114,90 +115,6 @@ def goal():
     print("\nYou now have everything needed! Let's go home!")
     print(3 * "\nLoading...\n")
     print("Congratulations! You got home!")
-
-
-# Room functions
-
-# Room 1 - Wood
-
-def cut_wood():
-    how_many_trees = int(input("\nHow many trees do you need? "))
-    seeds_needed = how_many_trees * 2
-    print(f"\nYou will need to plant {seeds_needed} seeds if you want to cut that many trees!")
-    cut_tree = int(input("\nPress 1 to start cutting trees: \n1 - Start cutting \n2 - Go back\n\n"))
-    if cut_tree == 1 and items["seeds"] >= seeds_needed:
-        items["seeds"] = items["seeds"] - seeds_needed
-        items["trees"] = how_many_trees
-        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["trees"]) + " trees.")
-    elif cut_tree == 1 and items["seeds"] < seeds_needed:
-        print("\nYou don't have enough seeds! Go trade money to get more!")
-    elif cut_tree == 2:
-        room = room_menu()
-        return room
-    #else not needed due to main program already showing error
-
-# Room 2 - Second hand
-
-def second_hand():
-    money_needed_jacket = 10
-    print("\nSeller: Right now the only item left we have is a jacket!")
-    print(f"\nSeller: You will need {money_needed_jacket} coins to get this jacket!")
-    ask_buy_jacket = int(input("\nSeller: Would you like to buy it? \n\n1 - Yes. \n2 - No.\n\n"))
-    if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
-        items["money"] = items["money"] - money_needed_jacket
-        items["jacket"] = 1
-        print("\nYou now have " + str(items["money"]) + " coins and " + str(items["jacket"]) + " jacket.")
-    elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
-        print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
-    elif ask_buy_jacket == 2:
-        print("\nSeller: Go away then!\n\nYou have been kicked out of the store!")
-        room = room_menu()
-        return room
-    #else not needed due to main program already showing error
-
-# Room 3 - Well
-
-def get_water():
-    how_much_water = int(input("\nHow many litres of water do you need? "))
-    money_needed = how_much_water * 1
-    print(f"\nYou will need {money_needed} coins to get that much water!")
-    pump_water = int(input("\nPress 1 to start pumping water: \n1 - Start pumping\n2 - Go back\n\n"))
-    if pump_water == 1 and items["money"] >= money_needed:
-        items["money"] = items["money"] - money_needed
-        items["water"] = how_much_water
-        print("\nYou now have " + str(items["water"]) + " litres of water and " + str(items["money"]) + " coins.")
-    elif pump_water == 1 and items["money"] < money_needed:
-        print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
-    elif pump_water == 2:
-        room = room_menu()
-        return room
-    #else not needed due to main program already showing error
-
-# Room 4 - Trade-in
-
-def trade_in_():
-    print_panel ()
-    print("\nPlease note that the full amount of units of what you have will be exchanged!")
-    print("\nToday's exchange rate: 1 seed = 1 coin.")
-    what_trade_in = int(input("\nChoose what you want to trade-in: \n1 - Money into seeds \n2 - Seeds into money\n3 - Go back\n\n"))
-    if what_trade_in == 1:
-        items["seeds"] = 10
-        items["money"] = 0
-        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["money"]) + " coins.")
-
-        # TODO: Implement some logic for when the player selects some trade for something they have 0.
-
-    elif what_trade_in == 2:
-        items["seeds"] = 0
-        items["money"] = 10
-        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["money"]) + " coins.")
-
-        # TODO: Implement some logic for when the player selects some trade for something they have 0.
-
-    elif what_trade_in == 3:
-        room = room_menu()
-        return room
-    #else not needed due to main program already showing error
 
 # Print command not found
 
