@@ -6,41 +6,14 @@ from Print_CommandNotFound import print_command_not_found
 from Print_Panel import print_panel
 from Lake import lore_boat, check_wood
 from Desert import lore_desert, check_water
+from FreezingMountain import lore_freezing_mountain, check_jacket
+from Print_Story import print_story
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
 
 print(f"\nThe name of the player is: {player_name}")
 print(f"The age of the player is: {player_age}")
-
-# Freezing mountain functions:
-
-# Freezing mountain lore:
-
-def lore_freezing_mountain():
-    print(f"\nIf you choose to go this way, you will need a jacket to get through the freezing mountains.")
-    print(f"In order for you to get a jacket, you will need to buy it from the second hand store. It costs 10 coins.")
-    print(f"Check your panel to see how much money you have. If you do not have enough, you can trade some items in the trade-in store.")
-
-    print(f"Once you have a jacket, come back here to start your journey.")
-
-# Check jacket
-
-def check_jacket():
-
-    start_mountain = int(input("\nPress 1 to start your journey: \n1 - Go through the mountain. \n2 - Go back\n\n"))
-    if start_mountain == 1:
-        if items["jacket"] >= 1:
-            goal()
-        else:
-            print("\nYou don't have a jacket! Go buy one!")
-    elif start_mountain == 2:
-        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
-        return way_home # This to pass the new option inside the already first chosen option.
-    else:
-        print_command_not_found()
-
-# Main program
 
 character1 = Character("Cris", 10, 0)
 character2 = Character("Toti", 0, 10)
@@ -71,7 +44,7 @@ else:
             choose_character = int(input(f"\n 1 - {character1.name} with {character1.seeds} seeds and {character1.money} coins. \n 2 - {character2.name} with {character2.seeds} seeds and {character2.money} coins. \n 3 - {character3.name} with {character3.seeds} seeds and {character3.money} coins.\n\n"))
 
 
-print("\nHere some intro story...")
+print_story()
 
 command = main_menu()
 
@@ -95,7 +68,6 @@ while command != 4:
                 way_home = way_home_menu()
     elif command == 2:
         print_panel (items)
-        print("\nGoing back to the main menu...")
 
     elif command == 3:
         room = room_menu()
