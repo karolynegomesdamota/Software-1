@@ -183,13 +183,13 @@ while command != 4:
         room = room_menu()
         while room != 5:
             if room == 1:
-                room = cut_wood() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = cut_wood(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
             elif room == 2:
-                room = second_hand() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = second_hand(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
             elif room == 3:
-                room = get_water() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = get_water(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
             elif room == 4:
-                room = trade_in_() # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = trade_in_(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
             else:
                 print_command_not_found()
                 room = room_menu()

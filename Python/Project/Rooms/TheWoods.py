@@ -1,8 +1,6 @@
 from Menus import room_menu
 
-items = {}
-
-def cut_wood():
+def cut_wood(items): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
     how_many_trees = int(input("\nHow many trees do you need? "))
     seeds_needed = how_many_trees * 2
     print(f"\nYou will need to plant {seeds_needed} seeds if you want to cut that many trees!")

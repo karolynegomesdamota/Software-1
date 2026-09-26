@@ -1,8 +1,6 @@
 from Menus import room_menu
 
-items = {}
-
-def get_water():
+def get_water(items): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
     how_much_water = int(input("\nHow many litres of water do you need? "))
     money_needed = how_much_water * 1
     print(f"\nYou will need {money_needed} coins to get that much water!")

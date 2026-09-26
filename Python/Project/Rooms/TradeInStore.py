@@ -1,8 +1,6 @@
 from Menus import room_menu
 
-items = {}
-
-def trade_in_():
+def trade_in_(items): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
     #print_panel () Comment for a moment to test if the package works
     print("\nPlease note that the full amount of units of what you have will be exchanged!")
     print("\nToday's exchange rate: 1 seed = 1 coin.")

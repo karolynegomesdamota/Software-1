@@ -1,9 +1,6 @@
-
 from Menus import room_menu
 
-items = {}
-
-def second_hand():
+def second_hand(items): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
     money_needed_jacket = 10
     print("\nSeller: Right now the only item left we have is a jacket!")
     print(f"\nSeller: You will need {money_needed_jacket} coins to get this jacket!")
