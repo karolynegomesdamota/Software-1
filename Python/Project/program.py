@@ -2,22 +2,14 @@ from Menus import main_menu, room_menu, way_home_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water
 from Classes import Character
 from Goal import goal
+from Print_CommandNotFound import print_command_not_found
+from Print_Panel import print_panel
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
 
 print(f"\nThe name of the player is: {player_name}")
 print(f"The age of the player is: {player_age}")
-
-# Panel functions
-
-def print_panel ():
-    print(f"\nThis is everything you have: ")
-    print("Seeds: " + str(items["seeds"]))
-    print("Money: " + str(items["money"]))
-    print("Trees: " + str(items["trees"]))
-    print("Water: " + str(items["water"]))
-    print("Jacket: " + str(items["jacket"]))
 
 # Lake functions:
 
@@ -111,11 +103,6 @@ def check_jacket():
     else:
         print_command_not_found()
 
-# Print command not found
-
-def print_command_not_found():
-    print("\nCommand not found. Try again!")
-
 # Main program
 
 character1 = Character("Cris", 10, 0)
@@ -170,7 +157,7 @@ while command != 4:
                 print_command_not_found()
                 way_home = way_home_menu()
     elif command == 2:
-        print_panel ()
+        print_panel (items)
         print("\nGoing back to the main menu...")
 
     elif command == 3:
