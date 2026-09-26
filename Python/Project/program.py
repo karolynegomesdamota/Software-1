@@ -1,5 +1,6 @@
 from Menus import main_menu, room_menu, way_home_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water
+from Classes import Character
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
@@ -121,21 +122,11 @@ def goal():
 def print_command_not_found():
     print("\nCommand not found. Try again!")
 
-# Classes
-
-# Class characters
-
-class Character:
-    def __init__(self, name, seeds, money):
-        self.name = name
-        self.seeds = seeds
-        self.money = money
+# Main program
 
 character1 = Character("Cris", 10, 0)
 character2 = Character("Toti", 0, 10)
 character3 = Character("Bal", 5, 5)
-
-# Main program
 
 if player_age < 12:
     print ("\nYou are a minor!")
