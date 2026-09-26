@@ -1,6 +1,7 @@
 from Menus import main_menu, room_menu, way_home_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water
 from Classes import Character
+from Goal import goal
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
@@ -109,13 +110,6 @@ def check_jacket():
         return way_home # This to pass the new option inside the already first chosen option.
     else:
         print_command_not_found()
-
-# Goal functions:
-
-def goal():
-    print("\nYou now have everything needed! Let's go home!")
-    print(3 * "\nLoading...\n")
-    print("Congratulations! You got home!")
 
 # Print command not found
 
