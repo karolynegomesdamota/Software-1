@@ -21,7 +21,9 @@ if player_age < 12:
     print ("\nYou are a minor!")
 else:
     print (f"\nWelcome, {player_name}!")
+
     items, chosen_character = choose_character()
+
     print_story(chosen_character)
     time.sleep(2)
 
