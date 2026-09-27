@@ -1,6 +1,6 @@
 import time
-from Classes import Character
-from Print_CommandNotFound import print_command_not_found
+from Characters import Character
+from Prints import print_command_not_found
 
 characters = []
 

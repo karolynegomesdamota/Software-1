@@ -1,15 +1,9 @@
 from Menus import main_menu, room_menu, way_home_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water
-from Classes import Character
-from Goal import goal
-from Print_CommandNotFound import print_command_not_found
-from Print_Panel import print_panel
-from Lake import lore_boat, check_wood
-from Desert import lore_desert, check_water
-from FreezingMountain import lore_freezing_mountain, check_jacket
-from Print_Story import print_story
+from Prints import print_command_not_found, print_panel, print_story
+from Paths import lore_boat, check_wood,  lore_desert, check_water, lore_freezing_mountain, check_jacket
 import time
-from Characters_Function import choose_character
+from Characters import choose_character
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))

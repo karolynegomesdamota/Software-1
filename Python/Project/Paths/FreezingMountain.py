@@ -1,6 +1,5 @@
 import time
 from Goal import goal
-from Print_CommandNotFound import print_command_not_found
 from Menus import way_home_menu
 
 # Freezing mountain functions:
