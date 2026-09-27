@@ -65,6 +65,6 @@ else:
                     print_command_not_found()
                     room = room_menu()
         else:
-                print_command_not_found()
+            print_command_not_found()
 
         command = main_menu()

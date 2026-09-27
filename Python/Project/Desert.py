@@ -32,5 +32,3 @@ def check_water(items):
     elif start_desert == 2:
         way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
         return way_home # This to pass the new option inside the already first chosen option.
-    else:
-        print_command_not_found()
