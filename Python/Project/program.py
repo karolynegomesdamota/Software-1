@@ -12,8 +12,8 @@ from Print_Story import print_story
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
 
-print(f"\nThe name of the player is: {player_name}")
-print(f"The age of the player is: {player_age}")
+#print(f"\nThe name of the player is: {player_name}")
+#print(f"The age of the player is: {player_age}")
 
 character1 = Character("Cris", 10, 0)
 character2 = Character("Toti", 0, 10)
