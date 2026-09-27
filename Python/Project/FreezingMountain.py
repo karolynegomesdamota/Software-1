@@ -1,3 +1,4 @@
+import time
 from Goal import goal
 from Print_CommandNotFound import print_command_not_found
 from Menus import way_home_menu
@@ -8,16 +9,19 @@ from Menus import way_home_menu
 
 def lore_freezing_mountain():
     print(f"\nIf you choose to go this way, you will need a jacket to get through the freezing mountains.")
+    time.sleep(5)
     print(f"In order for you to get a jacket, you will need to buy it from the second hand store. It costs 10 coins.")
-    print(f"Check your panel to see how much money you have. If you do not have enough, you can trade some items in the trade-in store.")
-
+    time.sleep(5)
+    print(f"Check your back to see how much money you have. If you do not have enough, you can trade some items in the trade-in store.")
+    time.sleep(5)
     print(f"Once you have a jacket, come back here to start your journey.")
+    time.sleep(2)
 
 # Check jacket
 
 def check_jacket(items):
 
-    start_mountain = int(input("\nPress 1 to start your journey: \n1 - Go through the mountain. \n2 - Go back\n\n"))
+    start_mountain = int(input("\n1 - Go through the mountain\n2 - Go back\n\n"))
     if start_mountain == 1:
         if items["jacket"] >= 1:
             goal()

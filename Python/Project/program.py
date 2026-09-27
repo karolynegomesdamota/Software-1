@@ -8,6 +8,7 @@ from Lake import lore_boat, check_wood
 from Desert import lore_desert, check_water
 from FreezingMountain import lore_freezing_mountain, check_jacket
 from Print_Story import print_story
+import time
 
 player_name = input ("\nEnter your name: ")
 player_age = int(input ("Enter your age: "))
@@ -30,20 +31,25 @@ else:
         if choose_character == 1:
             print(f"\nYou chose {character1.name}!")
             items = {"seeds":character1.seeds, "money":character1.money, "trees":0, "water":0, "jacket":0}
+            time.sleep(2)
             break
         elif choose_character == 2:
             print(f"\nYou chose {character2.name}!")
             items = {"seeds":character2.seeds, "money":character2.money, "trees":0, "water":0, "jacket":0}
+            time.sleep(2)
             break
         elif choose_character == 3:
             print(f"\nYou chose {character3.name}!")
             items = {"seeds":character3.seeds, "money":character3.money, "trees":0, "water":0, "jacket":0}
+            time.sleep(2)
             break
         else:
             print_command_not_found()
             choose_character = int(input(f"\n 1 - {character1.name} with {character1.seeds} seeds and {character1.money} coins. \n 2 - {character2.name} with {character2.seeds} seeds and {character2.money} coins. \n 3 - {character3.name} with {character3.seeds} seeds and {character3.money} coins.\n\n"))
+            time.sleep(2)
 
     print_story()
+    time.sleep(2)
 
     command = main_menu()
 

@@ -1,3 +1,4 @@
+import time
 from Goal import goal
 from Print_CommandNotFound import print_command_not_found
 from Menus import way_home_menu
@@ -8,17 +9,21 @@ from Menus import way_home_menu
 
 def lore_boat():
     print(f"\nIf you choose to go this way, you will need a boat to get through the lake.")
+    time.sleep(5)
     print(f"In order for you to build the boat, you will need to get wood. You will need 5 trees to build it.")
+    time.sleep(5)
     print(f"You can get trees from The Wood. For each tree to cut, you will need to plant 2 seeds.")
+    time.sleep(5)
     print(f"Check your bag to see how many seeds you have. If you do not have enough, you can trade-in some for some money in the trade-in store.")
-
+    time.sleep(5)
     print(f"Once you have enough trees, come back here to build your boat.")
+    time.sleep(2)
 
 # Check wood
 
 def check_wood(items):
 
-    boat = int(input("\nPress 1 to build the boat: \n1 - Build boat.\n2 - Go back.\n\n"))
+    boat = int(input("\n1 - Build boat\n2 - Go back\n\n"))
     if boat == 1:
         if items["trees"] >= 5:
             build_boat(items)
