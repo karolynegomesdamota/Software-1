@@ -30,13 +30,16 @@ else:
             while way_home != 4:
                 if way_home == 1:
                     lore_boat()
-                    way_home = check_wood(items) # This to update the way home after it is asked in the check wood function.
+                    check_wood(items)
+                    break
                 elif way_home == 2:
                     lore_desert()
-                    way_home = check_water(items) # This to update the way home after it is asked in the check wood function.
+                    check_water(items)
+                    break
                 elif way_home == 3:
                     lore_freezing_mountain()
-                    way_home = check_jacket(items) # This to update the way home after it is asked in the check wood function.
+                    check_jacket(items)
+                    break
                 elif way_home == 4:
                     main_menu()
                 else:
