@@ -10,9 +10,13 @@ characters.append(Character("Bal", 5, 5))
 
 
 def choose_character():
-    print (f"\nChoose your character:")
-    print (f"\nPlease note this cannot be changed later on!")
-    choose_character = int(input(f"\n 1 - {characters[0].name} with {characters[0].seeds} seeds and {characters[0].money} coins. \n 2 - {characters[1].name} with {characters[1].seeds} seeds and {characters[1].money} coins. \n 3 - {characters[2].name} with {characters[2].seeds} seeds and {characters[2].money} coins.\n\n"))
+    print(f"\nChoose your character:")
+    time.sleep(2)
+    print(f"\nEach character comes with different items in their bags. Choose one and then figure out how that will affect your game!")
+    time.sleep(2)
+    print(f"\nPlease note this cannot be changed later on!")
+    time.sleep(2)
+    choose_character = int(input(f"\n 1 - {characters[0].name} - Bag: {characters[0].seeds} seeds and {characters[0].money} coins. \n 2 - {characters[1].name} - Bag: {characters[1].seeds} seeds and {characters[1].money} coins. \n 3 - {characters[2].name} - Bag: {characters[2].seeds} seeds and {characters[2].money} coins.\n\n"))
     while choose_character != 1 or 2 or 3:
         if choose_character == 1:
             print(f"\nYou chose {characters[0].name}!\n")
