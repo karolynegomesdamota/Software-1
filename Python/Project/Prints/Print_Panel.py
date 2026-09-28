@@ -1,7 +1,7 @@
 import time
 
 def print_panel (items):
-    print(f"\nThis is everything you have in your bag: ")
+    print(f"\nThis is everything you have in your bag: \n")
     print("Seeds: " + str(items["seeds"]))
     print("Money: " + str(items["money"]))
     print("Trees: " + str(items["trees"]))
