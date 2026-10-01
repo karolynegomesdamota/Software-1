@@ -6,13 +6,20 @@ import time
 from Characters import choose_character
 
 player_name = input ("\nEnter your name: ")
-player_age = int(input ("Enter your age: "))
 
-#print(f"\nThe name of the player is: {player_name}")
-#print(f"The age of the player is: {player_age}")
+while True:
+    try:
+        player_age = int(input ("Enter your age: "))
+        break
+    except ValueError:
+        print("Age not valid. Try again!")
 
 if player_age < 12:
-    print ("\nYou are a minor!")
+    print("\nYou are under 12! You cannot play this game!")
+    time.sleep(1)
+    print("\nExisting game...")
+    time.sleep(1)
+    print("\nExit completed!")
 else:
     print (f"\nWelcome, {player_name}!")
     time.sleep(2)
@@ -31,7 +38,7 @@ else:
                 if way_home == 1:
                     lore_boat()
                     check_wood(items)
-                    break
+                    break #This break causes the go back menu inside check wood to jump to the main menu. But the problem now is for some reason after "You don't have enough trees it is printing the lore again"
                 elif way_home == 2:
                     lore_desert()
                     check_water(items)
@@ -65,4 +72,9 @@ else:
         else:
             print_command_not_found()
 
+        print("Is it here?")
         command = main_menu()
+
+    print("\nExisting game...")
+    time.sleep(1)
+    print("\nExit completed!")
