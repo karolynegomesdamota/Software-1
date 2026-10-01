@@ -72,7 +72,6 @@ else:
         else:
             print_command_not_found()
 
-        print("Is it here?")
         command = main_menu()
 
     print("\nExisting game...")
