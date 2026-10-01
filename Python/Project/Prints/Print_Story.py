@@ -5,5 +5,5 @@ def print_story(chosen_character):
     time.sleep(2)
     print(f"Currently, {chosen_character.name} is in the town closest to the kingdom and must find a way to get there.")
     time.sleep(2)
-    print("From now on, you'll have to figure out how to get there and do everything necessary to make it happen.")
+    print("From now on, you will have to figure out how to get there and do everything necessary to make it happen.")
     time.sleep(1)
