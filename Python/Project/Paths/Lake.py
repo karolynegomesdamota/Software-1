@@ -1,6 +1,6 @@
 import time
 from Goal import goal
-from Menus import way_home_menu
+from Menus import main_menu, way_home_menu
 from Prints import print_command_not_found
 
 # Lake functions:
@@ -31,9 +31,11 @@ def check_wood(items):
         else:
             print("\nYou don't have enough trees! Go get some in The Wood!")
             time.sleep(2)
+            check_wood(items)
     elif boat == 2:
-        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
-        return way_home # This to pass the new option inside the already first chosen option.
+        #way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
+        #return way_home # This to pass the new option inside the already first chosen option.
+        way_home_menu()
     else:
         print_command_not_found()
         check_wood(items)
