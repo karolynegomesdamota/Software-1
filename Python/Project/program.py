@@ -25,8 +25,16 @@ else:
     time.sleep(2)
 
     items, chosen_character = choose_character()
+    time.sleep(1)
 
-    print_story(chosen_character)
+    with open("Project/intro.txt", "r") as file:
+        file_data = file.read()
+        print(f"\n{file_data}")
+    time.sleep(2)
+
+    with open("Project/instructions.txt", "r") as file:
+        file_data = file.read()
+        print(f"\n{file_data}")
     time.sleep(2)
 
     command = main_menu()
