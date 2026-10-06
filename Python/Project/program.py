@@ -1,7 +1,7 @@
 from Menus import main_menu, room_menu, way_home_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water
 from Prints import print_command_not_found, print_panel, print_story
-from Paths import lore_boat, lake_menu,  lore_desert, check_water, lore_freezing_mountain, check_jacket
+from Paths import lore_boat, lake_menu,  lore_desert, check_water, lore_freezing_mountain, freezing_mountain_menu
 import time
 from Characters import choose_character
 import json
@@ -44,7 +44,7 @@ while command != 4:
                 break
             elif way_home == 3:
                 lore_freezing_mountain()
-                check_jacket(items)
+                freezing_mountain_menu(items)
                 break
             elif way_home == 4:
                 main_menu()
