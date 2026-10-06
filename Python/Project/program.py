@@ -1,7 +1,7 @@
 from Menus import main_menu, room_menu, way_home_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water
 from Prints import print_command_not_found, print_panel, print_story
-from Paths import lore_boat, check_wood,  lore_desert, check_water, lore_freezing_mountain, check_jacket
+from Paths import lore_boat, lake_menu,  lore_desert, check_water, lore_freezing_mountain, check_jacket
 import time
 from Characters import choose_character
 import json
@@ -37,8 +37,7 @@ while command != 4:
         while way_home != 4:
             if way_home == 1:
                 lore_boat()
-                check_wood(items)
-                break #This break causes the go back menu inside check wood to j1ump to the main menu. But the problem now is for some reason after "You don't have enough trees it is printing the lore again"
+                way_home = lake_menu(items)
             elif way_home == 2:
                 lore_desert()
                 check_water(items)
