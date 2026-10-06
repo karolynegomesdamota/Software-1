@@ -52,8 +52,7 @@ def lake_menu(items):
 # Build boat
 
 def build_boat(items):
-    if items["trees"] == 5:
-        items["trees"] = 0
-        items["boat"] = 1
-        print (f"\nYou now have a boat!")
-        time.sleep(1)
+    items["trees"] = items["trees"] - 5
+    items["boat"] = 1
+    print (f"\nYou now have a boat!")
+    time.sleep(1)
