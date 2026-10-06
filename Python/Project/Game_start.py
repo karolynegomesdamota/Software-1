@@ -43,7 +43,7 @@ def game_start():
         "items":items
         }
 
-        with open("saved_game_data.json", "w") as file:
+        with open("Project/saved_game_data.json", "w") as file:
             json.dump(save_data, file)
 
     return items, chosen_character
