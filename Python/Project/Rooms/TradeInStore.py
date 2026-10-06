@@ -11,16 +11,26 @@ def trade_in_(items): #Parameters passed here because if not it had no way to ac
     time.sleep(1)
 
     if what_trade_in == 1:
-        items["seeds"] = 10
-        items["money"] = 0
-        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["money"]) + " coins.")
+        if items["money"] >= 1:
+            items["seeds"] = items["seeds"] + items["money"]
+            items["money"] = 0
+            print("\nYou now have handed over all your money and have a total of " + str(items["seeds"]) + " seeds.")
 
+        else:
+            print("\nYou don't any money to trade!")
+            time.sleep(1)
         # TODO: Implement some logic for when the player selects some trade for something they have 0.
 
     elif what_trade_in == 2:
-        items["seeds"] = 0
-        items["money"] = 10
-        print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["money"]) + " coins.")
+
+        if items["seeds"] >= 1:
+            items["money"] = items["money"] + items["seeds"]
+            items["seeds"] = 0
+            print("\nYou now have handed over all your seeds and have a total of " + str(items["money"]) + " coins.")
+
+        else:
+            print("\nYou don't any seeds to trade!")
+            time.sleep(1)
 
         # TODO: Implement some logic for when the player selects some trade for something they have 0.
 
