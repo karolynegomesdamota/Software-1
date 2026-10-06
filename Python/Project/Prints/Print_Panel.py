@@ -8,4 +8,4 @@ def print_panel (items):
     print("Water: " + str(items["water"]))
     print("Jackets: " + str(items["jacket"]))
     print("Boats: " + str(items["boat"]))
-    time.sleep(3)
+    time.sleep(1)
