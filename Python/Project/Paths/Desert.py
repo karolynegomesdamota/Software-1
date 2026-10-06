@@ -1,6 +1,7 @@
 import time
 from Goal import goal
 from Menus import way_home_menu
+from Prints import print_command_not_found
 
 # Desert functions:
 
@@ -28,6 +29,11 @@ def check_water(items):
             goal()
         else:
             print("\nYou don't have enough water! Go pump some from the well!")
+            way_home = check_water(items)
+            return way_home
     elif start_desert == 2:
         way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
         return way_home # This to pass the new option inside the already first chosen option.
+    else:
+        print_command_not_found()
+        check_water(items)
