@@ -1,5 +1,5 @@
 from Menus import main_menu, room_menu, way_home_menu
-from Rooms import second_hand, cut_wood, trade_in_, get_water
+from Rooms import second_hand, cut_wood, trade_in_, get_water, second_hand_lore, get_water_lore, cut_wood_lore
 from Prints import print_command_not_found, print_panel, print_story
 from Paths import lore_boat, lake_menu,  lore_desert, check_water, lore_freezing_mountain, freezing_mountain_menu
 import time
@@ -37,7 +37,7 @@ while command != 4:
         while way_home != 4:
             if way_home == 1:
                 lore_boat()
-                way_home = lake_menu(items)
+                way_home = lake_menu(items) # TODO: I need to fix that when I get to the goal, it opens the menu again
             elif way_home == 2:
                 lore_desert()
                 check_water(items)
@@ -58,13 +58,20 @@ while command != 4:
         room = room_menu()
         while room != 5:
             if room == 1:
-                room = cut_wood(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                how_many_trees, seeds_needed = cut_wood_lore()
+                cut_wood(items, how_many_trees, seeds_needed) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = room_menu()
             elif room == 2:
-                room = second_hand(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                money_needed_jacket = second_hand_lore()
+                second_hand(items, money_needed_jacket) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = room_menu()
             elif room == 3:
-                room = get_water(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                how_much_water, money_needed = get_water_lore()
+                get_water(items, how_much_water, money_needed) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = room_menu()
             elif room == 4:
-                room = trade_in_(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                trade_in_(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
+                room = room_menu()
             else:
                 print_command_not_found()
                 room = room_menu()
