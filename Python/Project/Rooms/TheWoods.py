@@ -3,6 +3,7 @@ from Menus import room_menu
 from Prints import print_command_not_found
 
 def cut_wood(items): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
+
     how_many_trees = int(input("\nHow many trees do you need? "))
     time.sleep(1)
     seeds_needed = how_many_trees * 2
@@ -19,11 +20,15 @@ def cut_wood(items): #Parameters passed here because if not it had no way to acc
             print(f"Tree number {i+1} cut!")
             time.sleep(1)
         print("\nYou now have " + str(items["seeds"]) + " seeds and " + str(items["trees"]) + " trees.")
+
     elif cut_tree == 1 and items["seeds"] < seeds_needed:
         print("\nYou don't have enough seeds! Go trade money to get more!")
+        room_menu = cut_wood(items)
+        return room_menu
     elif cut_tree == 2:
-        room = room_menu()
-        return room
+        room_menu = cut_wood(items)
+        return room_menu
     else:
         print_command_not_found()
-        cut_wood(items)
+        cut_tree = int(input("\n1 - Start cutting \n2 - Go back\n\n"))
+
