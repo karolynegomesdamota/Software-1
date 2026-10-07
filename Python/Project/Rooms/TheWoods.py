@@ -3,8 +3,15 @@ from Menus import room_menu
 from Prints import print_command_not_found
 
 def the_woods_lore():
-    how_many_trees = int(input("\nHow many trees do you need? "))
-    time.sleep(1)
+
+    while True:
+                try:
+                    how_many_trees = int(input("\nHow many trees do you need? "))
+                    break
+                except ValueError:
+                    print("\nCommand not valid. Try again!")
+                    time.sleep(1)
+
     seeds_needed = how_many_trees * 2
     print(f"\nYou will need to plant {seeds_needed} seeds if you want to cut that many trees!")
     time.sleep(1)
@@ -14,7 +21,13 @@ def the_woods(items, how_many_trees, seeds_needed): #Parameters passed here beca
 
     while True:
 
-        cut_tree = int(input("\n1 - Start cutting \n2 - Go back\n\n"))
+        while True:
+            try:
+                cut_tree = int(input("\n1 - Start cutting \n2 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
 
         if cut_tree == 1 and items["seeds"] >= seeds_needed:
             items["seeds"] = items["seeds"] - seeds_needed

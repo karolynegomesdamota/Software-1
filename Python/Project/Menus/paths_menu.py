@@ -6,7 +6,14 @@ def path_menu(items):
 
     while True:
 
-        path = int(input("\nRoutes to Molitorreno: \n\n1 - Crossing the Lake \n2 - Crossing the Desert \n3 - Crossing the Frozen Mountains \n4 - Go back\n\n"))
+        while True:
+            try:
+                path = int(input("\nRoutes to Molitorreno: \n\n1 - Crossing the Lake \n2 - Crossing the Desert \n3 - Crossing the Frozen Mountains \n4 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
+
         time.sleep(1)
 
         if path == 1:

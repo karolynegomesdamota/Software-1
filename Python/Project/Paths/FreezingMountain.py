@@ -21,7 +21,13 @@ def freezing_mountain_menu(items):
 
     while True:
 
-        start_mountain = int(input("\n1 - Go through the mountain\n2 - Go back\n\n"))
+        while True:
+            try:
+                start_mountain = int(input("\n1 - Go through the mountain\n2 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
 
         if start_mountain == 1:
             if items["jacket"] >= 1:

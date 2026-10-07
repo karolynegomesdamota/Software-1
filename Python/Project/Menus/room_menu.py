@@ -6,7 +6,14 @@ def room_menu(items):
 
     while True:
 
-        room = int(input("\nLocal Trades in Molitorreno: \n\n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store \n5 - Go back\n\n"))
+        while True:
+            try:
+                room = int(input("\nLocal Trades in Molitorreno: \n\n1 - The Woods \n2 - Second hand store \n3 - The Well \n4 - Trade-in store \n5 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
+
         time.sleep(1)
 
         if room == 1:

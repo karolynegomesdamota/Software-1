@@ -3,7 +3,15 @@ from Menus import room_menu
 from Prints import print_command_not_found
 
 def get_water_lore():
-    how_much_water = int(input("\nHow many litres of water do you need? "))
+
+    while True:
+                try:
+                    how_much_water = int(input("\nHow many litres of water do you need? "))
+                    break
+                except ValueError:
+                    print("\nCommand not valid. Try again!")
+                    time.sleep(1)
+
     money_needed = how_much_water * 1
     time.sleep(1)
     print(f"\nWe charge for water in order to cover the costs of keeping it clean.\nYou will need {money_needed} coins to get that much water!")
@@ -14,7 +22,13 @@ def get_water(items, how_much_water, money_needed): #Parameters passed here beca
 
     while True:
 
-        pump_water = int(input("\n1 - Start pumping\n2 - Go back\n\n"))
+        while True:
+            try:
+                pump_water = int(input("\n1 - Start pumping\n2 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
 
         if pump_water == 1 and items["money"] >= money_needed:
             items["money"] = items["money"] - money_needed

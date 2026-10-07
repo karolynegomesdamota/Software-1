@@ -10,8 +10,13 @@ def trade_in_(items): #Parameters passed here because if not it had no way to ac
 
     while True:
 
-        what_trade_in = int(input("\nChoose what you want to trade-in: \n1 - Money into seeds \n2 - Seeds into money\n3 - Go back\n\n"))
-        time.sleep(1)
+        while True:
+            try:
+                what_trade_in = int(input("\nChoose what you want to trade-in: \n1 - Money into seeds \n2 - Seeds into money\n3 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
 
         if what_trade_in == 1:
             if items["money"] >= 1:

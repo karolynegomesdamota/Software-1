@@ -22,7 +22,13 @@ def lake_menu(items):
 
     while True:
 
-        boat = int(input("\n1 - Build boat\n2 - Cross the lake\n3 - Go back\n\n"))
+        while True:
+            try:
+                boat = int(input("\n1 - Build boat\n2 - Cross the lake\n3 - Go back\n\n"))
+                break
+            except ValueError:
+                print("\nCommand not valid. Try again!")
+                time.sleep(1)
 
         if boat == 1:
             if items["trees"] >= 5:
