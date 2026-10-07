@@ -17,6 +17,13 @@ def trade_in_(items): #Parameters passed here because if not it had no way to ac
             if items["money"] >= 1:
                 items["seeds"] = items["seeds"] + items["money"]
                 items["money"] = 0
+                print("\nTrading:\n")
+                time.sleep(1)
+                for i in range(items["seeds"]):
+                    print("🪙" * (items["seeds"] - i))
+                    print("🌱" * (i + 1))
+                    time.sleep(1)
+                time.sleep(1)
                 print("\nYou now have handed over all your money and have a total of " + str(items["seeds"]) + " seeds.")
                 time.sleep(1)
                 break
@@ -28,6 +35,12 @@ def trade_in_(items): #Parameters passed here because if not it had no way to ac
             if items["seeds"] >= 1:
                 items["money"] = items["money"] + items["seeds"]
                 items["seeds"] = 0
+                print("\nTrading:\n")
+                time.sleep(1)
+                for i in range(items["money"]):
+                    print("🌱" * (items["money"] - i))
+                    print("🪙" * (i + 1))
+                    time.sleep(1)
                 print("\nYou now have handed over all your seeds and have a total of " + str(items["money"]) + " coins.")
                 time.sleep(1)
                 break
