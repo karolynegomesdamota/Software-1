@@ -33,6 +33,7 @@ def desert_menu(items):
                 sys.exit()
             else:
                 print("\nYou don't have enough water! Go pump some from the well!")
+                time.sleep(1)
         elif start_desert == 2:
             return
         else:
