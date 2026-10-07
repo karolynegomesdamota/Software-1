@@ -41,4 +41,5 @@ def goal(way):
         print("............🧥")
         time.sleep(1)
 
-    print("\nCongratulations! You got to Molitorreno!\n")
+    print("\nCongratulations! You got to Molitorreno!")
+    print("\nThe message has been correctly delivered to the kingdom!\n")
