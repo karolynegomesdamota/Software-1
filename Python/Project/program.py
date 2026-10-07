@@ -1,9 +1,7 @@
-from Menus import main_menu, room_menu, way_home_menu
+from Menus import main_menu, room_menu, path_menu
 from Rooms import second_hand, cut_wood, trade_in_, get_water, second_hand_lore, get_water_lore, cut_wood_lore
-from Prints import print_command_not_found, print_panel, print_story
-from Paths import lore_boat, lake_menu,  lore_desert, check_water, lore_freezing_mountain, freezing_mountain_menu
+from Prints import print_command_not_found, print_panel
 import time
-from Characters import choose_character
 import json
 import os
 from Game_start import game_start
@@ -29,31 +27,14 @@ if os.path.exists(save_data_file_path):
 else:
     items, chosen_character = game_start()
 
-command = main_menu()
+while True:
 
-while command != 4:
+    command = main_menu()
+
     if command == 1:
-        way_home = way_home_menu()
-        while way_home != 4:
-            if way_home == 1:
-                lore_boat()
-                way_home = lake_menu(items) # TODO: I need to fix that when I get to the goal, it opens the menu again
-            elif way_home == 2:
-                lore_desert()
-                check_water(items)
-                break
-            elif way_home == 3:
-                lore_freezing_mountain()
-                freezing_mountain_menu(items)
-                break
-            elif way_home == 4:
-                main_menu()
-            else:
-                print_command_not_found()
-                way_home = way_home_menu()
+        path_menu(items)
     elif command == 2:
         print_panel (items)
-
     elif command == 3:
         room = room_menu()
         while room != 5:
@@ -75,11 +56,10 @@ while command != 4:
             else:
                 print_command_not_found()
                 room = room_menu()
+    elif command == 4:
+        print("\nExiting game...")
+        time.sleep(1)
+        print("\nExit completed!\n")
+        break
     else:
         print_command_not_found()
-
-    command = main_menu()
-
-print("\nExiting game...")
-time.sleep(1)
-print("\nExit completed!")
