@@ -11,7 +11,7 @@ def game_start():
             player_age = int(input ("Enter your age: "))
             break
         except ValueError:
-            print("Age not valid. Try again!")
+            print("\nAge not valid. Try again!\n")
 
     if player_age < 12:
         print("\nYou are under 12! You cannot play this game!")
