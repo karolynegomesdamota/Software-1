@@ -8,14 +8,11 @@ import sys
 # Desert lore:
 
 def lore_desert():
+    print(f"\nCrossing the Desert: ")
     print(f"\nIf you choose to go this way, you will need water to get through the desert.")
-    time.sleep(1)
     print(f"In order for you to get water, you will need to pump it from the well. You will need 10 liters of water to cross the desert.")
-    time.sleep(1)
     print(f"The farmer who owns the well will charge you 1 coin per liter.")
-    time.sleep(1)
     print(f"Check your bag to see how much money you have. If you do not have enough, you can trade some items in the trade-in store.")
-    time.sleep(1)
     print(f"Once you have enough water, come back here to start your journey.")
     time.sleep(1)
 
