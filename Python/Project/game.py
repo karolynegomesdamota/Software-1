@@ -11,8 +11,10 @@ save_data_file_path = 'Project/saved_data_package/saved_game_data.json'
 
 # Here the program checks if the file exists.
 # If yes, it retrieves the information from the previous game. Even within this, the player can choose to initiate a new game.
-# If the player chooses to continue, the recorded information will be printed.
+# If the player chooses to continue, the recorded information will be printed and assigned to variables to be used during the game.
 # If not, it will trigger a new game to start.
+
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 if os.path.exists(save_data_file_path):
 
@@ -49,6 +51,16 @@ if os.path.exists(save_data_file_path):
 
 else:
     items = game_start()
+
+# This part calls the main menu (displays the options) and forces the player to choose a command.
+# If the command is not valid, the program will display an error and request the command again.
+# The options are:
+    # Opening the paths menu (paths to get to the goal).
+    # Printing the content of the character's bag.
+    # Opening the local trades menu.
+    # Exit
+
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 while True:
 
