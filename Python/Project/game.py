@@ -42,13 +42,13 @@ if os.path.exists(save_data_file_path):
                 break
         elif continue_previous_game == 2:
             print("\nStarting new game...")
-            items, chosen_character = game_start()
+            items = game_start()
             break
         else:
             print_command_not_found()
 
 else:
-    items, chosen_character = game_start()
+    items = game_start()
 
 while True:
 

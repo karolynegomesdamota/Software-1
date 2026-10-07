@@ -1,6 +1,7 @@
+# Import
 import time
 
-def goal(way):
+def goal(way): # The function receives way from the specific path function the player uses to get to the goal.
 
     print("\nYou now have everything needed! Let's go!")
     time.sleep(1)

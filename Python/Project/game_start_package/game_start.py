@@ -1,6 +1,14 @@
+# Import
 import time
-from characters_package import choose_character
 import json
+# From
+from characters_package import choose_character
+
+# When this function is called, a player name is asked and then a welcome message is displayed.
+# Then the program reads 2 text files (one for introduction and another one for instructions).
+# Finally, both the information requested here and the one returned from choose_character are stored in a dictionary and saved in a json file.
+# The function returns items to be later used during the game in the main code.
+
 
 def game_start():
 
@@ -30,4 +38,4 @@ def game_start():
     with open("Project/saved_data_package/saved_game_data.json", "w") as file:
         json.dump(save_data, file)
 
-    return items, chosen_character
+    return items
