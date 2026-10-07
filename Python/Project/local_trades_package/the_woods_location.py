@@ -1,5 +1,6 @@
 import time
 from prints_package import print_command_not_found
+from saved_data_package import save_game
 
 def the_woods_lore():
 
@@ -31,6 +32,7 @@ def the_woods(items, how_many_trees, seeds_needed): #Parameters passed here beca
         if cut_tree == 1 and items["seeds"] >= seeds_needed:
             items["seeds"] = items["seeds"] - seeds_needed
             items["trees"] = items["trees"] + how_many_trees
+            save_game(items)
             print("\nCutting trees:\n")
             time.sleep(1)
             for i in range(how_many_trees):

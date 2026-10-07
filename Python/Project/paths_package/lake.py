@@ -2,6 +2,7 @@ import time
 from goal_package import goal
 from prints_package import print_command_not_found
 import sys
+from saved_data_package import save_game
 
 # Lake functions:
 
@@ -54,4 +55,5 @@ def build_boat(items):
     items["trees"] = items["trees"] - 5
     items["boat"] = 1
     print (f"\nYou now have a boat! ⛵️")
+    save_game(items)
     time.sleep(1)

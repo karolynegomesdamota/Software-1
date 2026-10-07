@@ -1,6 +1,6 @@
 from prints_package import print_command_not_found
 import time
-
+from saved_data_package import save_game
 
 def second_hand_lore():
     money_needed_jacket = 10
@@ -25,6 +25,7 @@ def second_hand(items, money_needed_jacket): #Parameters passed here because if 
         if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
             items["money"] = items["money"] - money_needed_jacket
             items["jacket"] = 1
+            save_game(items)
             print("\nYou now have a jacket! 🧥")
             time.sleep(1)
             break

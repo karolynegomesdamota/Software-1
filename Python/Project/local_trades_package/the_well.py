@@ -1,5 +1,6 @@
 import time
 from prints_package import print_command_not_found
+from saved_data_package import save_game
 
 def get_water_lore():
 
@@ -32,6 +33,7 @@ def get_water(items, how_much_water, money_needed): #Parameters passed here beca
         if pump_water == 1 and items["money"] >= money_needed:
             items["money"] = items["money"] - money_needed
             items["water"] = how_much_water
+            save_game(items)
             print("\nPumping water:\n")
             time.sleep(1)
             for i in range(how_much_water):

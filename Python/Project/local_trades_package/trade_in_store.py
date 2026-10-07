@@ -1,5 +1,6 @@
 import time
 from prints_package import print_command_not_found, print_panel
+from saved_data_package import save_game
 
 def trade_in_(items): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
     print("\nYour bag:")
@@ -23,6 +24,7 @@ def trade_in_(items): #Parameters passed here because if not it had no way to ac
             if items["money"] >= 1:
                 items["seeds"] = items["seeds"] + items["money"]
                 items["money"] = 0
+                save_game(items)
                 print("\nTrading:\n")
                 time.sleep(1)
                 for i in range(items["seeds"]):
@@ -41,6 +43,7 @@ def trade_in_(items): #Parameters passed here because if not it had no way to ac
             if items["seeds"] >= 1:
                 items["money"] = items["money"] + items["seeds"]
                 items["seeds"] = 0
+                save_game(items)
                 print("\nTrading:\n")
                 time.sleep(1)
                 for i in range(items["money"]):
