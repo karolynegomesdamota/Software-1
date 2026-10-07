@@ -1,11 +1,11 @@
+# Import
 import time
+import sys
+# From
 from goal_package import goal
 from prints_package import print_command_not_found
-import sys
 
-# Desert functions:
-
-# Desert lore:
+# This function serves simply to print information about the chosen path.
 
 def lore_desert():
     print(f"\nCrossing the Desert: ")
@@ -16,7 +16,13 @@ def lore_desert():
     print(f"Once you have enough water, come back here to start your journey.")
     time.sleep(1)
 
-# Desert menu
+# This function asks the player whether they want to go through the desert or go back to the previous menu.
+# If the player chooses to go through the desert, it will be checked if they have equal or more the amount of water necessary.
+    # If they do, they will go through the desert, reach their goal and the game will finish.
+    # If they don't, a message will appear informing them and giving instruction on what to do.
+# If they choose to go back, they will be sent back to the paths menu.
+
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 def desert_menu(items):
 

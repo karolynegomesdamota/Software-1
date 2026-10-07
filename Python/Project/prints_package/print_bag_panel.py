@@ -1,4 +1,7 @@
+# Import
 import time
+
+# This function prints a table with all the items the character has.
 
 def print_panel (items):
     print(f"{'\nItems':<15}{'Amount':<10}")

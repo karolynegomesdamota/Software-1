@@ -1,12 +1,12 @@
+# Import
 import time
+import sys
+# From
 from goal_package import goal
 from prints_package import print_command_not_found
-import sys
 from saved_data_package import save_game
 
-# Lake functions:
-
-# Boat lore:
+# This function serves simply to print information about the chosen path.
 
 def lore_boat():
     print(f"\nCrossing the Lake: ")
@@ -17,7 +17,19 @@ def lore_boat():
     print(f"Once you have enough trees, come back here to build your boat.")
     time.sleep(1)
 
-# Lake menu
+# This function asks the player whether they want to build a boat, cross the lake or go back to the previous menu.
+
+# If the player chooses to build the boat, it will be checked if they have enough wood.
+    # If they do, the build_boat function will be called.
+    # If they don't, a message will appear informing them and giving instruction on what to do.
+
+# If the player chooses to cross the lake, it will be checked if they have a boat.
+    # If they do, they will cross the lake, reach their goal and the game will finish.
+    # If they don't, a message will appear informing them and giving instruction on what to do.
+
+# If they choose to go back, they will be sent back to the paths menu.
+
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 def lake_menu(items):
 
@@ -49,7 +61,7 @@ def lake_menu(items):
         else:
             print_command_not_found()
 
-# Build boat
+# This functions adds the boat to the character belongings and subtracts the trees used to build it:
 
 def build_boat(items):
     items["trees"] = items["trees"] - 5

@@ -1,11 +1,11 @@
+# Import
 import time
+import sys
+# From
 from goal_package import goal
 from prints_package import print_command_not_found
-import sys
 
-# Freezing mountain functions:
-
-# Freezing mountain lore:
+# This function serves simply to print information about the chosen path.
 
 def lore_freezing_mountain():
     print(f"\nCrossing the Frozen Mountains:: ")
@@ -15,7 +15,13 @@ def lore_freezing_mountain():
     print(f"Once you have a jacket, come back here to start your journey.")
     time.sleep(1)
 
-# Freezing mountain menu
+# This function asks the player whether they want to go through the freezing mountains or go back to the previous menu.
+# If the player chooses to go through the mountains, it will be checked if they have a jacket.
+    # If they do, they will go through the mountains, reach their goal and the game will finish.
+    # If they don't, a message will appear informing them and giving instruction on what to do.
+# If they choose to go back, they will be sent back to the paths menu.
+
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 def freezing_mountain_menu(items):
 
