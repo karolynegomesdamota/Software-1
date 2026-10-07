@@ -25,6 +25,7 @@ def second_hand(items, money_needed_jacket): #Parameters passed here because if 
         elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
             print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
             time.sleep(1)
+            break
         elif ask_buy_jacket == 2:
             print("\nSeller: Go away then!")
             time.sleep(1)
