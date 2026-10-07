@@ -6,7 +6,7 @@ def get_water_lore():
     how_much_water = int(input("\nHow many litres of water do you need? "))
     money_needed = how_much_water * 1
     time.sleep(1)
-    print(f"\nYou will need {money_needed} coins to get that much water!")
+    print(f"\nWe charge for water in order to cover the costs of keeping it clean.\nYou will need {money_needed} coins to get that much water!")
     time.sleep(1)
     return how_much_water, money_needed
 
@@ -19,6 +19,11 @@ def get_water(items, how_much_water, money_needed): #Parameters passed here beca
         if pump_water == 1 and items["money"] >= money_needed:
             items["money"] = items["money"] - money_needed
             items["water"] = how_much_water
+            print("\nPumping water:\n")
+            time.sleep(1)
+            for i in range(how_much_water):
+                print("💧" * (i + 1))
+                time.sleep(1)
             print("\nYou now have now " + str(items["water"]) + " litres of water!")
             time.sleep(1)
             break
