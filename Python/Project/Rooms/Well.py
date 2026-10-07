@@ -12,19 +12,20 @@ def get_water_lore():
 
 def get_water(items, how_much_water, money_needed): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
 
-    pump_water = int(input("\n1 - Start pumping\n2 - Go back\n\n"))
+    while True:
 
-    if pump_water == 1 and items["money"] >= money_needed:
-        items["money"] = items["money"] - money_needed
-        items["water"] = how_much_water
-        print("\nYou now have now " + str(items["water"]) + " litres of water!")
-        time.sleep(1)
-    elif pump_water == 1 and items["money"] < money_needed:
-        print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
-        time.sleep(1)
-    elif pump_water == 2:
-        room = room_menu()
-        return room
-    else:
-        print_command_not_found()
-        get_water(items, how_much_water, money_needed)
+        pump_water = int(input("\n1 - Start pumping\n2 - Go back\n\n"))
+
+        if pump_water == 1 and items["money"] >= money_needed:
+            items["money"] = items["money"] - money_needed
+            items["water"] = how_much_water
+            print("\nYou now have now " + str(items["water"]) + " litres of water!")
+            time.sleep(1)
+            break
+        elif pump_water == 1 and items["money"] < money_needed:
+            print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
+            time.sleep(1)
+        elif pump_water == 2:
+            return
+        else:
+            print_command_not_found()

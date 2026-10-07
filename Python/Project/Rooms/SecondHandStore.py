@@ -1,7 +1,6 @@
 from Prints import print_command_not_found
 import time
 
-from Menus import room_menu
 
 def second_hand_lore():
     money_needed_jacket = 10
@@ -13,21 +12,24 @@ def second_hand_lore():
 
 def second_hand(items, money_needed_jacket): #Parameters passed here because if not it had no way to access the data once I moved this out of the program
 
-    ask_buy_jacket = int(input(f"\nSeller: Would you like to buy it?\n\n1 - Yes \n2 - No\n\n"))
+    while True:
 
-    if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
-        items["money"] = items["money"] - money_needed_jacket
-        items["jacket"] = 1
-        print("\nYou now have a jacket!")
-        time.sleep(1)
-    elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
-        print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
-        time.sleep(1)
-    elif ask_buy_jacket == 2:
-        print("\nSeller: Go away then!")
-        time.sleep(1)
-        print("\nYou have been kicked out of the store!")
-        time.sleep(1)
-    else:
-        print_command_not_found()
-        second_hand(items, money_needed_jacket)
+        ask_buy_jacket = int(input(f"\nSeller: Would you like to buy it?\n\n1 - Yes \n2 - No\n\n"))
+
+        if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
+            items["money"] = items["money"] - money_needed_jacket
+            items["jacket"] = 1
+            print("\nYou now have a jacket!")
+            time.sleep(1)
+            break
+        elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
+            print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
+            time.sleep(1)
+        elif ask_buy_jacket == 2:
+            print("\nSeller: Go away then!")
+            time.sleep(1)
+            print("\nYou have been kicked out of the store!")
+            time.sleep(1)
+            return
+        else:
+            print_command_not_found()
