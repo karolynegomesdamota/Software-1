@@ -1,5 +1,4 @@
 from Menus import main_menu, room_menu, path_menu
-from Rooms import second_hand, cut_wood, trade_in_, get_water, second_hand_lore, get_water_lore, cut_wood_lore
 from Prints import print_command_not_found, print_panel
 import time
 import json
@@ -36,26 +35,7 @@ while True:
     elif command == 2:
         print_panel (items)
     elif command == 3:
-        room = room_menu()
-        while room != 5:
-            if room == 1:
-                how_many_trees, seeds_needed = cut_wood_lore()
-                cut_wood(items, how_many_trees, seeds_needed) # TODO: Rename function and variable within it to make more sense and to be more clear.
-                room = room_menu()
-            elif room == 2:
-                money_needed_jacket = second_hand_lore()
-                second_hand(items, money_needed_jacket) # TODO: Rename function and variable within it to make more sense and to be more clear.
-                room = room_menu()
-            elif room == 3:
-                how_much_water, money_needed = get_water_lore()
-                get_water(items, how_much_water, money_needed) # TODO: Rename function and variable within it to make more sense and to be more clear.
-                room = room_menu()
-            elif room == 4:
-                trade_in_(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
-                room = room_menu()
-            else:
-                print_command_not_found()
-                room = room_menu()
+        room_menu(items)
     elif command == 4:
         print("\nExiting game...")
         time.sleep(1)
