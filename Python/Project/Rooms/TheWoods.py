@@ -20,8 +20,9 @@ def the_woods(items, how_many_trees, seeds_needed): #Parameters passed here beca
             items["seeds"] = items["seeds"] - seeds_needed
             items["trees"] = items["trees"] + how_many_trees
             print("\nCutting trees:\n")
+            time.sleep(1)
             for i in range(how_many_trees):
-                print(f"Tree number {i+1} cut!")
+                print("🪵" * (i + 1))
                 time.sleep(1)
             print("\nYou now have " + str(items["trees"]) + " trees!")
             time.sleep(1)

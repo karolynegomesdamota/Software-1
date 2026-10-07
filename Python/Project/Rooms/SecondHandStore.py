@@ -15,11 +15,12 @@ def second_hand(items, money_needed_jacket): #Parameters passed here because if 
     while True:
 
         ask_buy_jacket = int(input(f"\nSeller: Would you like to buy it?\n\n1 - Yes \n2 - No\n\n"))
+        time.sleep(1)
 
         if ask_buy_jacket == 1 and items["money"] >= money_needed_jacket:
             items["money"] = items["money"] - money_needed_jacket
             items["jacket"] = 1
-            print("\nYou now have a jacket!")
+            print("\nYou now have a jacket! 🧥")
             time.sleep(1)
             break
         elif ask_buy_jacket == 1 and items["money"] < money_needed_jacket:
