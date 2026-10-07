@@ -1,7 +1,7 @@
 import time
 from Goal import goal
-from Menus import way_home_menu
 from Prints import print_command_not_found
+import sys
 
 # Freezing mountain functions:
 
@@ -17,21 +17,21 @@ def lore_freezing_mountain():
     print(f"Once you have a jacket, come back here to start your journey.")
     time.sleep(1)
 
-# Check jacket
+# Freezing mountain menu
 
 def freezing_mountain_menu(items):
 
-    start_mountain = int(input("\n1 - Go through the mountain\n2 - Go back\n\n"))
-    if start_mountain == 1:
-        if items["jacket"] >= 1:
-            goal()
+    while True:
+
+        start_mountain = int(input("\n1 - Go through the mountain\n2 - Go back\n\n"))
+
+        if start_mountain == 1:
+            if items["jacket"] >= 1:
+                goal("freezing_mountain")
+                sys.exit()
+            else:
+                print("\nYou don't have a jacket! Go buy one!")
+        elif start_mountain == 2:
+            return
         else:
-            print("\nYou don't have a jacket! Go buy one!")
-            way_home = freezing_mountain_menu(items)
-            return way_home
-    elif start_mountain == 2:
-        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
-        return way_home # This to pass the new option inside the already first chosen option.
-    else:
-        print_command_not_found()
-        freezing_mountain_menu(items)
+            print_command_not_found()

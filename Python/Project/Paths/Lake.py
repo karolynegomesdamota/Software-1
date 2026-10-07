@@ -1,7 +1,7 @@
 import time
 from Goal import goal
-from Menus import main_menu, way_home_menu
 from Prints import print_command_not_found
+import sys
 
 # Lake functions:
 
@@ -23,31 +23,27 @@ def lore_boat():
 
 def lake_menu(items):
 
-    boat = int(input("\n1 - Build boat\n2 - Cross the lake\n3 - Go back\n\n"))
-    if boat == 1:
-        if items["trees"] >= 5:
-            build_boat(items)
-            way_home = lake_menu(items)
-            return way_home
+    while True:
+
+        boat = int(input("\n1 - Build boat\n2 - Cross the lake\n3 - Go back\n\n"))
+
+        if boat == 1:
+            if items["trees"] >= 5:
+                build_boat(items)
+            else:
+                print("\nYou don't have enough trees! Go get some in The Wood!")
+                time.sleep(2)
+        elif boat == 2:
+            if items["boat"] >= 1:
+                goal("lake")
+                sys.exit()
+            else:
+                print("\nYou don't have your boat yet! Build it first!")
+                time.sleep(2)
+        elif boat == 3:
+            return
         else:
-            print("\nYou don't have enough trees! Go get some in The Wood!")
-            time.sleep(2)
-            way_home = lake_menu(items)
-            return way_home
-    if boat == 2:
-        if items["boat"] >= 1:
-            goal()
-        else:
-            print("\nYou don't have your boat yet! Build it first!")
-            time.sleep(2)
-            way_home = lake_menu(items)
-            return way_home
-    elif boat == 3:
-        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
-        return way_home # This to pass the new option inside the already first chosen option.
-    else:
-        print_command_not_found()
-        lake_menu(items)
+            print_command_not_found()
 
 # Build boat
 

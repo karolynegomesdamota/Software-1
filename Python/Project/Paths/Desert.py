@@ -1,7 +1,7 @@
 import time
 from Goal import goal
-from Menus import way_home_menu
 from Prints import print_command_not_found
+import sys
 
 # Desert functions:
 
@@ -19,21 +19,21 @@ def lore_desert():
     print(f"Once you have enough water, come back here to start your journey.")
     time.sleep(1)
 
-# Check water
+# Desert menu
 
-def check_water(items):
+def desert_menu(items):
 
-    start_desert = int(input("\n1 - Go through the desert\n2 - Go back\n\n"))
-    if start_desert == 1:
-        if items["water"] >= 10:
-            goal()
+    while True:
+
+        start_desert = int(input("\n1 - Go through the desert\n2 - Go back\n\n"))
+
+        if start_desert == 1:
+            if items["water"] >= 10:
+                goal("desert")
+                sys.exit()
+            else:
+                print("\nYou don't have enough water! Go pump some from the well!")
+        elif start_desert == 2:
+            return
         else:
-            print("\nYou don't have enough water! Go pump some from the well!")
-            way_home = check_water(items)
-            return way_home
-    elif start_desert == 2:
-        way_home = way_home_menu() # This to make the way home menu to show and ask for a new option
-        return way_home # This to pass the new option inside the already first chosen option.
-    else:
-        print_command_not_found()
-        check_water(items)
+            print_command_not_found()
