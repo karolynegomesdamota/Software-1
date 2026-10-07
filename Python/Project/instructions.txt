@@ -1,4 +1,4 @@
 Go through the main menu where you can:
-- Check the possibles paths to get to Molitorreno.
+- Check the possible paths to get to Molitorreno.
 - Check what items you have in your bag.
-- Check what local trades you have available in this town to help you to get to your objective.
+- Check what local trades you have available in this town to help you to get to your goal.
