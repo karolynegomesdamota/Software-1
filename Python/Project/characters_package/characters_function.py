@@ -40,18 +40,18 @@ def choose_character():
             time.sleep(1)
             items = {"seeds":characters[0].seeds, "money":characters[0].money, "trees":0, "water":0, "jacket":0, "boat":0}
             chosen_character = characters[0]
-            return items, chosen_character # Returned to be used inside game_start to save it for continuing an ongoing game.
+            return items, chosen_character # Returned to be used inside game_start. Why? To save this data to the save file for continuing the game later.
         elif choose_character == 2:
             print(f"\nYou chose {characters[1].name}!")
             time.sleep(1)
             items = {"seeds":characters[1].seeds, "money":characters[1].money, "trees":0, "water":0, "jacket":0, "boat":0}
             chosen_character = characters[1]
-            return items, chosen_character # Returned to be used inside game_start to save it for continuing an ongoing game.
+            return items, chosen_character # Returned to be used inside game_start. Why? To save this data to the save file for continuing the game later.
         elif choose_character == 3:
             print(f"\nYou chose {characters[2].name}!")
             time.sleep(1)
             items = {"seeds":characters[2].seeds, "money":characters[2].money, "trees":0, "water":0, "jacket":0, "boat":0}
             chosen_character = characters[2]
-            return items, chosen_character # Returned to be used inside game_start to save it for continuing an ongoing game.
+            return items, chosen_character # Returned to be used inside game_start. Why? To save this data to the save file for continuing the game later.
         else:
             print_command_not_found()

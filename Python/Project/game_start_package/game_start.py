@@ -38,4 +38,4 @@ def game_start():
     with open("Project/saved_data_package/saved_game_data.json", "w") as file:
         json.dump(save_data, file)
 
-    return items
+    return items # This is returned to be used within the main code.
