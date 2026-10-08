@@ -4,9 +4,9 @@ import time
 from prints_package import print_command_not_found
 from saved_data_package import save_game
 
-# This function asks the player how many trees they need, sets the amount of seeds needed and informs the player.
+def the_woods(items): # Items are passed (coming from main code) in order to evaluate the conditions.
 
-def the_woods_lore():
+    # The next block of code asks the player how many trees they need, sets the amount of seeds needed and informs the player how much is needed.
 
     while True:
                 try:
@@ -19,16 +19,13 @@ def the_woods_lore():
     seeds_needed = how_many_trees * 2
     print(f"\nYou will need to plant {seeds_needed} seeds if you want to cut that many trees!")
     time.sleep(1)
-    return how_many_trees, seeds_needed # This is returned to be passed to the following function.
 
-# If the player tries to cut trees, it will be checked if they have equal or more the amount of sees needed.
-    # If they do have enough seeds, they will obtain the trees and the seeds will be reduced accordingly from their bag.
-    # If they don't have the seeds, a message will appear informing them and giving instruction on what to do.
-# If they choose to go back, they will be sent back to the local trades menu.
+    # If the player tries to cut trees, it will be checked if they have equal or more the amount of sees needed.
+        # If they do have enough seeds, they will obtain the trees and the seeds will be reduced accordingly from their bag.
+        # If they don't have the seeds, a message will appear informing them and giving instruction on what to do.
+    # If they choose to go back, they will be sent back to the local trades menu.
 
-# If the player chooses an invalid option, the program displays an error and asks again for a command.
-
-def the_woods(items, how_many_trees, seeds_needed): # Items are passed (coming from main code) in order to evaluate the conditions.
+    # If the player chooses an invalid option, the program displays an error and asks again for a command.
 
     while True:
 

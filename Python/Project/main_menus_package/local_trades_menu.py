@@ -1,6 +1,9 @@
 import time
-from local_trades_package import second_hand, the_woods, trade_in_, get_water, second_hand_lore, get_water_lore, the_woods_lore
+from local_trades_package import second_hand, the_woods, trade_in_store, the_well
 from prints_package import print_command_not_found
+
+# This function serves to simply display the local trades menu options and to require the player to choose one.
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 def local_trades(items):
 
@@ -17,16 +20,13 @@ def local_trades(items):
         time.sleep(1)
 
         if room == 1:
-            how_many_trees, seeds_needed = the_woods_lore()
-            the_woods(items, how_many_trees, seeds_needed) # TODO: Rename function and variable within it to make more sense and to be more clear.
+            the_woods(items)
         elif room == 2:
-            money_needed_jacket = second_hand_lore()
-            second_hand(items, money_needed_jacket) # TODO: Rename function and variable within it to make more sense and to be more clear.
+            second_hand(items)
         elif room == 3:
-            how_much_water, money_needed = get_water_lore()
-            get_water(items, how_much_water, money_needed) # TODO: Rename function and variable within it to make more sense and to be more clear.
+            the_well(items)
         elif room == 4:
-            trade_in_(items) # TODO: Rename function and variable within it to make more sense and to be more clear.
+            trade_in_store(items)
         elif room == 5:
             return
         else:

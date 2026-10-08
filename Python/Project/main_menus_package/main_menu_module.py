@@ -1,4 +1,8 @@
+# Import
 import time
+
+# This function serves to simply display the main menu options and to require the player to choose an option.
+# The whole logic behind it is in the main code.
 
 def main_menu():
     print ("\nMain menu: ")

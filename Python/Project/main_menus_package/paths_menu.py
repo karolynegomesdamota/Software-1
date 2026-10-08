@@ -1,6 +1,11 @@
+# Import
 import time
+# From
 from prints_package import print_command_not_found
 from paths_package import lore_boat, lake_menu, lore_desert, desert_menu, lore_freezing_mountain, freezing_mountain_menu
+
+# This function serves to simply display the path menu options and to require the player to choose an option.
+# If the player chooses an invalid option, the program displays an error and asks again for a command.
 
 def path_menu(items):
 

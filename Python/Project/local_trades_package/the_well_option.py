@@ -4,9 +4,9 @@ import time
 from prints_package import print_command_not_found
 from saved_data_package import save_game
 
-# This function asks the player how many liters of water they need, sets the price for the water and informs the player.
+def the_well(items): # Items are passed (coming from main code) in order to evaluate the conditions.
 
-def get_water_lore():
+    # This next block asks the player how many liters of water they need, sets the price for the water and informs the player of the price.
 
     while True:
                 try:
@@ -20,16 +20,14 @@ def get_water_lore():
     time.sleep(1)
     print(f"\nWe charge for water in order to cover the costs of keeping it clean.\nYou will need {money_needed} coins to get that much water!")
     time.sleep(1)
-    return how_much_water, money_needed  # This is returned to be passed to the following function.
 
-# If the player tries to pump water, it will be checked if they have equal or more the price charged for the amount they choose.
-    # If they do have the money, they will obtain the water and the money will be reduced accordingly.
-    # If they don't have the money, a message will appear informing them and giving instruction on what to do.
-# If they choose to go back, they will be sent back to the local trades menu.
+    # The part asks the player if they want to pump water or go back.
+    # If the player tries to pump water, it will be checked if they have equal or more the price charged for the amount they chose.
+        # If they do have the money, they will obtain the water and the money will be reduced accordingly.
+        # If they don't have the money, a message will appear informing them and giving instruction on what to do.
+    # If they choose to go back, they will be sent back to the local trades menu.
 
-# If the player chooses an invalid option, the program displays an error and asks again for a command.
-
-def get_water(items, how_much_water, money_needed): # Items are passed (coming from main code) in order to evaluate the conditions.
+    # If the player chooses an invalid option, the program displays an error and asks again for a command.
 
     while True:
 

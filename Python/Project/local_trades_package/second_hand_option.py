@@ -4,25 +4,23 @@ import time
 from prints_package import print_command_not_found
 from saved_data_package import save_game
 
-# This function serves simply to display text and to set the pricing for the item.
+def second_hand(items): # Items are passed (coming from main code) in order to evaluate the conditions.
 
-def second_hand_lore():
+    # This next block of code serves simply to display text and to set the pricing for the item:
+
     money_needed_jacket = 10
     print("\nSeller: Right now the only item left we have is a jacket!")
     time.sleep(1)
     print(f"\nSeller: You will need {money_needed_jacket} coins to get this jacket!")
     time.sleep(1)
-    return money_needed_jacket # The money_needed_jacket is returned to be passed to the following function.
 
-# This function asks the player whether they want to buy the item or not and perform calculations to evaluate if they can buy it.
-# If the player chooses to buy the item, it will be checked if they have equal or more the price of the item.
-    # If they do have the money, they will obtain the item and the money will be reduced accordingly.
-    # If they don't have the money, a message will appear informing them and giving instruction on what to do.
-# If they choose not to buy the item, they will be kicked out of the store and sent back to the local trades menu.
+    # The next part asks the player whether they want to buy the item or not and perform calculations to evaluate if they can buy it.
+    # If the player chooses to buy the item, it will be checked if they have equal or more the price of the item.
+        # If they do have the money, they will obtain the item and the money will be reduced accordingly.
+        # If they don't have the money, a message will appear informing them and giving instruction on what to do.
+    # If they choose not to buy the item, they will be kicked out of the store and sent back to the local trades menu.
 
-# If the player chooses an invalid option, the program displays an error and asks again for a command.
-
-def second_hand(items, money_needed_jacket): # Items are passed (coming from main code) in order to evaluate the conditions.
+    # If the player chooses an invalid option, the program displays an error and asks again for a command.
 
     while True:
 
