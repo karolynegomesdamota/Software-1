@@ -39,3 +39,8 @@
 # Functionalities:
 
 # How the sustainable development perspective has been taken into account:
+
+- The game incorporates sustainable development principles directly into the game story. Examples include:
+    - If the player cuts down trees, they must plant twice the amount of seeds to replace the tres that were cut down.
+    - There's a second-hand store in the game where the character can buy items. This encourages sustainable consumption by giving used items a purpose instead of buying new ones.
+     - There's a well in the game that the character can use by paying a fee. Within the game, this fee is justified as a contribution towards the costs of maintaining the water in good condition.
