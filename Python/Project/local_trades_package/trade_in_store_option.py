@@ -27,6 +27,7 @@ def trade_in_store(items): # Items are passed (coming from main code) in order t
         while True:
             try:
                 what_trade_in = int(input("\nChoose what you want to trade-in: \n1 - Money into seeds \n2 - Seeds into money\n3 - Go back\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
@@ -34,16 +35,15 @@ def trade_in_store(items): # Items are passed (coming from main code) in order t
 
         if what_trade_in == 1:
             if items["money"] >= 1:
+                print("\nTrading:\n")
+                time.sleep(1)
+                for i in range(items["money"]):
+                    print("🪙" * (items["money"] - i))
+                    print("🌱" * (i + 1))
+                    time.sleep(1)
                 items["seeds"] = items["seeds"] + items["money"]
                 items["money"] = 0
                 save_game(items)
-                print("\nTrading:\n")
-                time.sleep(1)
-                for i in range(items["seeds"]):
-                    print("🪙" * (items["seeds"] - i))
-                    print("🌱" * (i + 1))
-                    time.sleep(1)
-                time.sleep(1)
                 print("\nYou now have handed over all your money and have a total of " + str(items["seeds"]) + " seeds.")
                 time.sleep(1)
                 break
@@ -53,15 +53,15 @@ def trade_in_store(items): # Items are passed (coming from main code) in order t
 
         elif what_trade_in == 2:
             if items["seeds"] >= 1:
+                print("\nTrading:\n")
+                time.sleep(1)
+                for i in range(items["seeds"]):
+                    print("🌱" * (items["seeds"] - i))
+                    print("🪙" * (i + 1))
+                    time.sleep(1)
                 items["money"] = items["money"] + items["seeds"]
                 items["seeds"] = 0
                 save_game(items)
-                print("\nTrading:\n")
-                time.sleep(1)
-                for i in range(items["money"]):
-                    print("🌱" * (items["money"] - i))
-                    print("🪙" * (i + 1))
-                    time.sleep(1)
                 print("\nYou now have handed over all your seeds and have a total of " + str(items["money"]) + " coins.")
                 time.sleep(1)
                 break
