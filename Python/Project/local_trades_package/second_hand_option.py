@@ -27,6 +27,7 @@ def second_hand(items): # Items are passed (coming from main code) in order to e
         while True:
             try:
                 ask_buy_jacket = int(input(f"\nSeller: Would you like to buy it?\n\n1 - Yes \n2 - No\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
@@ -36,6 +37,8 @@ def second_hand(items): # Items are passed (coming from main code) in order to e
             items["money"] = items["money"] - money_needed_jacket
             items["jacket"] = 1
             save_game(items)
+            print(f"\nYour money: - {money_needed_jacket} 🪙")
+            time.sleep(1)
             print("\nYou now have a jacket! 🧥")
             time.sleep(1)
             break
