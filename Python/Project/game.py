@@ -23,6 +23,7 @@ if os.path.exists(save_data_file_path):
         while True:
                 try:
                     continue_previous_game = int(input("\nDo you want to continue the previous game?\n\n1 - Yes\n2 - No\n\n"))
+                    time.sleep(1)
                     break
                 except ValueError:
                     print("\nCommand not valid. Try again!")
@@ -37,10 +38,10 @@ if os.path.exists(save_data_file_path):
                 chosen_character = {file_data['chosen_character']}
                 items = file_data['items']
                 print(f"\nPlayer name: {file_data['player_name']}")
+                time.sleep(1)
                 print(f"\nCharacter previously chosen: {file_data['chosen_character']}")
                 time.sleep(1)
                 print_panel(items)
-                time.sleep(1)
                 break
         elif continue_previous_game == 2:
             print("\nStarting new game...")
@@ -82,6 +83,7 @@ while True:
         print("\nExiting game...")
         time.sleep(1)
         print("\nExit completed!\n")
+        time.sleep(1)
         break
     else:
         print_command_not_found()

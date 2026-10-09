@@ -30,6 +30,7 @@ def choose_character():
         while True:
             try:
                 choose_character = int(input(f"\n 1 - {characters[0].name} - Bag: {characters[0].seeds} seeds and {characters[0].money} coins. \n 2 - {characters[1].name} - Bag: {characters[1].seeds} seeds and {characters[1].money} coins. \n 3 - {characters[2].name} - Bag: {characters[2].seeds} seeds and {characters[2].money} coins.\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")

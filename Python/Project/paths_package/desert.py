@@ -9,6 +9,7 @@ from prints_package import print_command_not_found
 
 def lore_desert():
     print(f"\nCrossing the Desert: ")
+    time.sleep(1)
     print(f"\nIf you choose to go this way, you will need water to get through the desert.")
     print(f"In order for you to get water, you will need to pump it from The Well. You will need 10 liters of water to cross the desert.")
     print(f"The farmer who owns the well will charge you 1 coin per liter.")
@@ -31,6 +32,7 @@ def desert_menu(items):
         while True:
             try:
                 start_desert = int(input("\n1 - Go through the desert\n2 - Go back\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
@@ -41,7 +43,7 @@ def desert_menu(items):
                 goal("desert")
                 sys.exit()
             else:
-                print("\nYou don't have enough water! Go pump some from the well!")
+                print("\nYou don't have enough water! Go pump some from The Well!")
                 time.sleep(1)
         elif start_desert == 2:
             return

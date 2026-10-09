@@ -10,6 +10,7 @@ from saved_data_package import save_game
 
 def lore_boat():
     print(f"\nCrossing the Lake: ")
+    time.sleep(1)
     print(f"\nIf you choose to go this way, you will need a boat to get through the lake.")
     print(f"In order for you to build the boat, you will need to get wood. You will need 5 trees to build it.")
     print(f"You can get trees from The Wood. For each tree to cut, you will need to plant 2 seeds.")
@@ -38,6 +39,7 @@ def lake_menu(items):
         while True:
             try:
                 boat = int(input("\n1 - Build boat\n2 - Cross the lake\n3 - Go back\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
@@ -46,6 +48,7 @@ def lake_menu(items):
         if boat == 1:
             if items["trees"] >= 5:
                 build_boat(items)
+                time.sleep(1)
             else:
                 print("\nYou don't have enough trees! Go get some in The Wood!")
                 time.sleep(1)
@@ -68,4 +71,3 @@ def build_boat(items):
     items["boat"] = 1
     print (f"\nYou now have a boat! ⛵️")
     save_game(items)
-    time.sleep(1)

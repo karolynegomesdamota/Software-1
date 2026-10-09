@@ -8,7 +8,8 @@ from prints_package import print_command_not_found
 # This function serves simply to print information about the chosen path.
 
 def lore_freezing_mountain():
-    print(f"\nCrossing the Frozen Mountains:: ")
+    print(f"\nCrossing the Freezing Mountains: ")
+    time.sleep(1)
     print(f"\nIf you choose to go this way, you will need a jacket to get through the freezing mountains.")
     print(f"In order for you to get a jacket, you will need to buy it from the second hand store. It costs 10 coins.")
     print(f"Check your back to see how much money you have. If you do not have enough, you can trade some items in the trade-in store.")
@@ -30,6 +31,7 @@ def freezing_mountain_menu(items):
         while True:
             try:
                 start_mountain = int(input("\n1 - Go through the mountain\n2 - Go back\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
@@ -41,6 +43,7 @@ def freezing_mountain_menu(items):
                 sys.exit()
             else:
                 print("\nYou don't have a jacket! Go buy one!")
+                time.sleep(1)
         elif start_mountain == 2:
             return
         else:

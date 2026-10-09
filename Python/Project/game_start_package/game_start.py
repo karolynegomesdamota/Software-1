@@ -13,6 +13,7 @@ from characters_package import choose_character
 def game_start():
 
     player_name = input ("\nEnter your name: ")
+    time.sleep(0.5)
 
     print (f"\nWelcome, {player_name}!")
     time.sleep(1)
