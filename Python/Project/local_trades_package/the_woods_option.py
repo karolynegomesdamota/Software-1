@@ -11,6 +11,7 @@ def the_woods(items): # Items are passed (coming from main code) in order to eva
     while True:
                 try:
                     how_many_trees = int(input("\nHow many trees do you need? "))
+                    time.sleep(1)
                     break
                 except ValueError:
                     print("\nCommand not valid. Try again!")
@@ -32,21 +33,25 @@ def the_woods(items): # Items are passed (coming from main code) in order to eva
         while True:
             try:
                 cut_tree = int(input("\n1 - Start cutting \n2 - Go back\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
                 time.sleep(1)
 
         if cut_tree == 1 and items["seeds"] >= seeds_needed:
+            print("\nCutting trees and planting seeds:\n")
+            time.sleep(1)
+            for i in range(5):
+                print("🪵" * (i+1))
+                print("🌱" * ((i+1) * 2))
+                time.sleep(1)
             items["seeds"] = items["seeds"] - seeds_needed
             items["trees"] = items["trees"] + how_many_trees
             save_game(items)
-            print("\nCutting trees:\n")
-            time.sleep(1)
-            for i in range(how_many_trees):
-                print("🪵" * (i + 1))
-                time.sleep(1)
             print("\nYou now have " + str(items["trees"]) + " trees!")
+            time.sleep(1)
+            print("\nYour current amount of seeds: " + str(items["seeds"]))
             time.sleep(1)
             break
         elif cut_tree == 1 and items["seeds"] < seeds_needed:
