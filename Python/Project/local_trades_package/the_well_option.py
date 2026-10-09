@@ -11,14 +11,14 @@ def the_well(items): # Items are passed (coming from main code) in order to eval
     while True:
                 try:
                     how_much_water = int(input("\nHow many litres of water do you need? "))
+                    time.sleep(1)
                     break
                 except ValueError:
                     print("\nCommand not valid. Try again!")
                     time.sleep(1)
 
-    money_needed = how_much_water * 1
-    time.sleep(1)
-    print(f"\nWe charge for water in order to cover the costs of keeping it clean.\nYou will need {money_needed} coins to get that much water!")
+    money_needed_water = how_much_water * 1
+    print(f"\nWe charge for water in order to cover the costs of keeping it clean.\nYou will need {money_needed_water} coins to get that much water!")
     time.sleep(1)
 
     # The part asks the player if they want to pump water or go back.
@@ -34,15 +34,18 @@ def the_well(items): # Items are passed (coming from main code) in order to eval
         while True:
             try:
                 pump_water = int(input("\n1 - Start pumping\n2 - Go back\n\n"))
+                time.sleep(1)
                 break
             except ValueError:
                 print("\nCommand not valid. Try again!")
                 time.sleep(1)
 
-        if pump_water == 1 and items["money"] >= money_needed:
-            items["money"] = items["money"] - money_needed
+        if pump_water == 1 and items["money"] >= money_needed_water:
+            items["money"] = items["money"] - money_needed_water
             items["water"] = how_much_water
             save_game(items)
+            print(f"\nYour money: - {money_needed_water} 🪙")
+            time.sleep(1)
             print("\nPumping water:\n")
             time.sleep(1)
             for i in range(how_much_water):
@@ -51,7 +54,7 @@ def the_well(items): # Items are passed (coming from main code) in order to eval
             print("\nYou now have now " + str(items["water"]) + " litres of water!")
             time.sleep(1)
             break
-        elif pump_water == 1 and items["money"] < money_needed:
+        elif pump_water == 1 and items["money"] < money_needed_water:
             print("\nYou don't have enough money! Go trade-in some item in the trade-in store to get more coins!")
             time.sleep(1)
         elif pump_water == 2:
